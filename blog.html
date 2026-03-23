@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Blog - Stackly Insights & Innovations</title>
-    <meta content="Stackly pioneers cutting-edge biotechnology solutions â€” read our latest insights in genomics." name="description" />
+    <meta content="Stackly pioneers cutting-edge biotechnology solutions — read our latest insights in genomics." name="description" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     
     <link href="https://cdn.prod.website-files.com/696f017270bc35c55e784979/css/heltro.webflow.shared.3e0d0a40f.min.css"
@@ -147,7 +147,18 @@
         .nl-input { max-width: 100%; }
         .nl-btn { width: 100%; }
       }
+      @media(max-width: 768px) {
+        .blog-grid { grid-template-columns: 1fr; }
+        .rt-blog-one-updates-bottom { flex-direction: column; align-items: center; gap: 24px; }
+        .rt-update-image { width: 100% !important; height: auto !important; max-width: 355px; }
+        .rt-faq-contect-box { flex-direction: column !important; display: flex !important; }
+        .rt-faq-left-v2, .rt-faq-tab-v2 { width: 100% !important; border-right: none !important; }
+        .rt-testimonial-v2, .rt-blog-one-updates, .rt-faq { padding-left: 15px; padding-right: 15px; overflow-x: hidden; width: 100vw !important;}
+        .rt-testimonial-top-wrapper-v2, .rt-testimonial-top-wrapper-v3 { flex-direction: column !important; align-items: center; }
+        .w-layout-hflex, .w-layout-grid { max-width: 100vw; }
+      }
     </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -197,7 +208,7 @@
                 <img src="images/pexels-edward-jenner-4033144.webp" alt="Author" class="f-avatar" />
                 <div class="f-author-info">
                   <h4>Dr. Elena Rostova</h4>
-                  <span>Chief Medical Officer â€¢ Mar 18, 2026</span>
+                  <span>Chief Medical Officer • Mar 18, 2026</span>
                 </div>
               </div>
             </div>
@@ -335,13 +346,11 @@
                                 <div class="w-layout-vflex rt-textimonial-preson-deatils-v1">
                                     <div class="w-layout-hflex rt-testimonial-author-box rt-overflow-hidden">
                                         <img width="62" height="66" alt="Customer 1"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6994331894c0b104338cd400_pexels-pavel-danilyuk-6193195%201%20(1).avif"
+                                            src="images/pexels-chokniti-khongchum-1197604-3938023.webp"
                                             loading="lazy" />
                                     </div>
                                     <div class="rt-textimonial-preson-text-v1">
-                                        <img width="26" height="20" alt="Comma Icon"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                            loading="lazy" />
+                                        <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                     </div>
                                 </div>
                                 <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -351,9 +360,7 @@
                                     <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                         <div class="rt-secondary-text-color">Avenor Quill</div>
                                         <div class="w-layout-vflex">
-                                            <img width="93" height="19" alt="Star"
-                                                src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                loading="lazy" />
+                                            <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -373,13 +380,11 @@
                                 <div class="w-layout-vflex rt-textimonial-preson-deatils-v1">
                                     <div class="w-layout-hflex rt-testimonial-author-box rt-overflow-hidden">
                                         <img width="62" height="66" alt="Customer 1"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6994331894c0b104338cd400_pexels-pavel-danilyuk-6193195%201%20(1).avif"
+                                            src="images/pexels-edward-jenner-4031417.webp"
                                             loading="lazy" />
                                     </div>
                                     <div class="rt-textimonial-preson-text-v1">
-                                        <img width="26" height="20" alt="Comma Icon"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                            loading="lazy" />
+                                        <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                     </div>
                                 </div>
                                 <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -389,9 +394,7 @@
                                     <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                         <div class="rt-secondary-text-color">Raquel Murillo</div>
                                         <div class="w-layout-vflex">
-                                            <img width="93" height="19" alt="Star"
-                                                src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                loading="lazy" />
+                                            <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -405,9 +408,7 @@
                                             src="images/pexels-edward-jenner-4033145.webp" loading="lazy" />
                                     </div>
                                     <div class="rt-textimonial-preson-text-v1">
-                                        <img width="26" height="20" alt="Comma Icon"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                            loading="lazy" />
+                                        <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                     </div>
                                 </div>
                                 <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -417,9 +418,7 @@
                                     <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                         <div class="rt-secondary-text-color">Raquel Murillo</div>
                                         <div class="w-layout-vflex">
-                                            <img width="93" height="19" alt="Star"
-                                                src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                loading="lazy" />
+                                            <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -433,9 +432,7 @@
                                             src="images/pexels-edward-jenner-4033146.webp" loading="lazy" />
                                     </div>
                                     <div class="rt-textimonial-preson-text-v1">
-                                        <img width="26" height="20" alt="Comma Icon"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                            loading="lazy" />
+                                        <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                     </div>
                                 </div>
                                 <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -445,9 +442,7 @@
                                     <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                         <div class="rt-secondary-text-color">Rivan Kexo</div>
                                         <div class="w-layout-vflex">
-                                            <img width="93" height="19" alt="Star"
-                                                src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                loading="lazy" />
+                                            <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -461,9 +456,7 @@
                                             src="images/pexels-edward-jenner-4033148.webp" loading="lazy" />
                                     </div>
                                     <div class="rt-textimonial-preson-text-v1">
-                                        <img width="26" height="20" alt="Comma Icon"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                            loading="lazy" />
+                                        <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                     </div>
                                 </div>
                                 <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -473,9 +466,7 @@
                                     <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                         <div class="rt-secondary-text-color">Alisia Siyara</div>
                                         <div class="w-layout-vflex">
-                                            <img width="93" height="19" alt="Star"
-                                                src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                loading="lazy" />
+                                            <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -495,13 +486,11 @@
                                                 <div
                                                     class="w-layout-hflex rt-testimonial-author-box rt-overflow-hidden">
                                                     <img width="62" height="66" alt="Customer 1"
-                                                        src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6994331894c0b104338cd400_pexels-pavel-danilyuk-6193195%201%20(1).avif"
+                                                        src="images/pexels-edward-jenner-4031418.webp"
                                                         loading="lazy" />
                                                 </div>
                                                 <div class="rt-textimonial-preson-text-v1">
-                                                    <img width="26" height="20" alt="Comma Icon"
-                                                        src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                                        loading="lazy" />
+                                                    <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                                 </div>
                                             </div>
                                             <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -511,9 +500,7 @@
                                                 <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                                     <div class="rt-secondary-text-color">Raquel Murillo</div>
                                                     <div class="w-layout-vflex">
-                                                        <img width="93" height="19" alt="Star"
-                                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                            loading="lazy" />
+                                                        <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -530,9 +517,7 @@
                                                         src="images/pexels-edward-jenner-4033149.webp" loading="lazy" />
                                                 </div>
                                                 <div class="rt-textimonial-preson-text-v1">
-                                                    <img width="26" height="20" alt="Comma Icon"
-                                                        src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                                        loading="lazy" />
+                                                    <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                                 </div>
                                             </div>
                                             <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -542,9 +527,7 @@
                                                 <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                                     <div class="rt-secondary-text-color">Raquel Murillo</div>
                                                     <div class="w-layout-vflex">
-                                                        <img width="93" height="19" alt="Star"
-                                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                            loading="lazy" />
+                                                        <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -561,9 +544,7 @@
                                                         src="images/pexels-gustavo-fring-3984882.webp" loading="lazy" />
                                                 </div>
                                                 <div class="rt-textimonial-preson-text-v1">
-                                                    <img width="26" height="20" alt="Comma Icon"
-                                                        src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                                        loading="lazy" />
+                                                    <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                                 </div>
                                             </div>
                                             <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -573,9 +554,7 @@
                                                 <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                                     <div class="rt-secondary-text-color">Rivan Kexo</div>
                                                     <div class="w-layout-vflex">
-                                                        <img width="93" height="19" alt="Star"
-                                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                            loading="lazy" />
+                                                        <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -592,9 +571,7 @@
                                                         src="images/pexels-gustavo-fring-8770700.webp" loading="lazy" />
                                                 </div>
                                                 <div class="rt-textimonial-preson-text-v1">
-                                                    <img width="26" height="20" alt="Comma Icon"
-                                                        src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/69898999e9230ece007bae8b_Group%201597885434.svg"
-                                                        loading="lazy" />
+                                                    <i class="fa-solid fa-quote-left" style="color:#00d2ff; font-size:28px; opacity: 0.8; margin-bottom:15px;"></i>
                                                 </div>
                                             </div>
                                             <div class="w-layout-vflex rt-textmonial-top-v1">
@@ -604,9 +581,7 @@
                                                 <div class="w-layout-hflex rt-testimonial-card-bottom-wraqpper">
                                                     <div class="rt-secondary-text-color">Alisia Siyara</div>
                                                     <div class="w-layout-vflex">
-                                                        <img width="93" height="19" alt="Star"
-                                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698573d20da75323e1a1846b_869f0ed98d4ece12a4d8df68ea183d73_Star.svg"
-                                                            loading="lazy" />
+                                                        <div style="display: flex; gap: 4px;"><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i><i class="fa-solid fa-star" style="color:#FBBF24; font-size:16px;"></i></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -626,58 +601,14 @@
                 </div>
             </div>
         </section>
-        <section class="rt-blog-one-updates">
-            <div class="w-layout-blockcontainer rt-container-small w-container">
-                <div class="w-layout-vflex rt-blog-one-updates-main rt-position-relative">
-                    <div class="w-layout-vflex rt-blog-one-updates-top rt-text-center">
-                        <h2 data-w-id="06ee3668-1222-0330-f9a0-9b2ff11e1b5a" 
-                            class="rt-gap-off rt-h2-heading-gap">Upcoming biotech news and research updates</h2>
-                        <p data-w-id="06ee3668-1222-0330-f9a0-9b2ff11e1b5c" 
-                            class="rt-blog-one-update-descritiopn rt-gap-off rt-description-gap">Using data-driven
-                            decisions to accelerate drug discovery, improve research quality, and patient outcomes.</p>
-                        <div data-w-id="06ee3668-1222-0330-f9a0-9b2ff11e1b5e" >
-                            <a data-wf--rt-button--variant="base" data-w-id="36ee05a8-1a3a-f1af-b31b-d4bb524a6fd3"
-                                href="/contact" class="rt-button rt-overflow-hidden w-inline-block">
-                                <div class="w-layout-hflex rt-text-button-wrapper rt-button-text">
-                                    <div class="rt-text-color-white rt-1">Get in touch</div>
-                                    <div class="rt-text-color-white rt-change-text rt-2">Get in touch</div>
-                                </div>
-                                <div class="rt-button-overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div data-w-id="06ee3668-1222-0330-f9a0-9b2ff11e1b61" 
-                        class="w-layout-hflex rt-blog-one-updates-bottom">
-                        <div class="rt-update-bottom-image-wrapper rt-1">
-                            <img src="images/pexels-gustavo-fring-8770711.webp" loading="lazy" width="355" height="531"
-                                alt="a-therapist-treating-a-patient" class="rt-update-image rt-1" />
-                        </div>
-                        <div class="rt-update-bottom-image-wrapper rt-2">
-                            <img src="images/pexels-gustavo-fring-8770715.webp" loading="lazy" width="355" height="531"
-                                alt="crop-orthopedist-examining-back" class="rt-update-image rt-2" />
-                        </div>
-                        <div class="rt-update-bottom-image-wrapper rt-3">
-                            <img src="images/pexels-gustavo-fring-8770721.webp" loading="lazy" width="355" height="531"
-                                alt="a-woman-sitting-on-the-therapy" class="rt-update-image rt-3" />
-                        </div>
-                        <div class="w-layout-vflex rt-lock-icon-wrapper">
-                            <div class="w-layout-vflex">
-                                <img src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/698ac87322d893f0f4df30a2_Vector%20(49).svg"
-                                    loading="lazy" width="23" height="25" alt="Lock Icon" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
+       
 
 <section class="rt-faq">
             <div class="w-layout-blockcontainer rt-container-medium-v2 w-container">
                 <div class="w-layout-vflex rt-faq-main-wrapper">
                     <div class="w-layout-vflex rt-faq-top-v2 rt-top-content-gap rt-text-center">
                         <h2 data-w-id="22809e06-afd1-498b-1811-da55e9b956bd"  class="rt-gap-off">
-                            Questions in mind? Weâ€™re ready with solutions!</h2>
+                            Questions in mind? We’re ready with solutions!</h2>
                     </div>
                     <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339469"  data-current="Tab 1"
                         data-easing="ease" data-duration-in="300" data-duration-out="100"
@@ -689,9 +620,7 @@
                                 <div class="rt-faq-left-part-content">
                                     <div>Research Questions</div>
                                     <div class="rt-faq-arrow-box">
-                                        <img style="filter:invert(100%)" loading="lazy" alt="arrow"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
-                                            class="rt-faq-one" />
+                                        <i class="fa-solid fa-chevron-down" style="color: currentColor; font-size: 14px;"></i>
                                     </div>
                                 </div>
                             </a>
@@ -700,9 +629,7 @@
                                 <div class="rt-faq-left-part-content">
                                     <div>Lab health</div>
                                     <div class="rt-faq-arrow-box">
-                                        <img width="10" style="filter:invert(0%)" alt="arrow"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
-                                            loading="lazy" class="rt-faq-two" />
+                                        <i class="fa-solid fa-chevron-down" style="color: currentColor; font-size: 14px;"></i>
                                     </div>
                                 </div>
                             </a>
@@ -711,9 +638,7 @@
                                 <div class="rt-faq-left-part-content">
                                     <div>Clinical trials</div>
                                     <div class="rt-faq-arrow-box">
-                                        <img style="filter:invert(0%)" loading="lazy" alt="arrow"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
-                                            class="rt-faq-three" />
+                                        <i class="fa-solid fa-chevron-down" style="color: currentColor; font-size: 14px;"></i>
                                     </div>
                                 </div>
                             </a>
@@ -722,9 +647,7 @@
                                 <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33947e" class="rt-faq-left-part-content">
                                     <div>Biotech services</div>
                                     <div class="rt-faq-arrow-box">
-                                        <img width="10" style="filter:invert(0%)" alt="arrow"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
-                                            loading="lazy" class="rt-faq-four" />
+                                        <i class="fa-solid fa-chevron-down" style="color: currentColor; font-size: 14px;"></i>
                                     </div>
                                 </div>
                             </a>
@@ -734,9 +657,7 @@
                                     class="rt-faq-left-part-content rt-botton-border-off">
                                     <div>Research data</div>
                                     <div class="rt-faq-arrow-box">
-                                        <img style="filter:invert(0%)" loading="lazy" alt="arrow"
-                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
-                                            class="rt-faq-five" />
+                                        <i class="fa-solid fa-chevron-down" style="color: currentColor; font-size: 14px;"></i>
                                     </div>
                                 </div>
                             </a>
@@ -1090,7 +1011,7 @@
                                             <div class="rt-paragraph-wrapper">
                                                 <div class="rt-top-twenty rt-change-top-padding">
                                                     <p class="rt-line-break rt-secondary-text-color">Please arrive
-                                                        15â€“20
+                                                        15–20
                                                         minutes early to complete any required paperwork.</p>
                                                 </div>
                                             </div>
@@ -1375,14 +1296,12 @@
         
 </main>
 
-    <!-- â•â•â• FOOTER (COPIED FROM INDEX.HTML) â•â•â• -->
-        <!-- === NEW MODERN FOOTER === -->
-    <footer class="modern-footer">
+     <footer class="modern-footer">
       <div class="mf-glow"></div>
       <div class="mf-container">
         <div class="mf-grid">
           <div class="mf-brand">
-            <a href="index.html"><img src="images/whitelogo.webp" alt="Stackly" class="mf-logo"/></a>
+            <a href="index.html"><img src="images/whitelogo.webp" alt="Stackly" height="20" class="mf-logo"/></a>
             <p>Pioneering advanced biotech solutions globally. We bring precision medicine to the forefront of human health.</p>
             <div class="mf-socials">
               <a href="404.html"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"></path></svg></a>
@@ -1390,14 +1309,13 @@
               <a href="404.html"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a>
             </div>
           </div>
-                    <div class="mf-links">
+          <div class="mf-links">
             <h4>Navigation</h4>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="blog.html">Blog</a>
-            <a href="service.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Journal</a>
+            <a href="dashboard.html">Client Portal</a>
             <a href="contact2.html">Contact</a>
-            <a href="contact2.html">Login</a>
           </div>
           <div class="mf-links">
             <h4>Legal & Support</h4>
@@ -1450,6 +1368,10 @@
 <script src="stackly-header.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
