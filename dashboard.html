@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Dashboard â€“ Stackly Biotech</title>
+<title>Dashboard - Stackly Biotech</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
@@ -31,10 +31,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-main);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* â”€â”€â”€â”€â”€ LAYOUT â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ LAYOUT Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .dashboard-wrap{display:flex;height:100vh;padding:16px;gap:16px;overflow:hidden;position:relative}
 
-/* â”€â”€â”€â”€â”€ FLOATING SIDEBAR â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ FLOATING SIDEBAR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .sidebar{
   width:85px;background:var(--card);border-radius:var(--r);
   border:1px solid var(--border);display:flex;flex-direction:column;
@@ -73,14 +73,14 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 /* Sb overlay (mobile) */
 .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499;opacity:0;transition:opacity .3s}
 
-/* â”€â”€â”€â”€â”€ MAIN AREA â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ MAIN AREA Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .main{
   flex:1;background:var(--card);border-radius:var(--r);
   border:1px solid var(--border);box-shadow:0 10px 40px -15px rgba(0,0,0,0.06);
   display:flex;flex-direction:column;overflow:hidden;min-width:0;
 }
 
-/* â”€â”€â”€â”€â”€ HEADER â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HEADER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .header{
   height:76px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid var(--border);flex-shrink:0;background:var(--card);z-index:40;
@@ -114,7 +114,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .btn-icon svg{width:18px;height:18px;stroke-width:2}
 .btn-badge{position:absolute;top:-4px;right:-4px;width:8px;height:8px;background:var(--p-rose);border-radius:50%}
 
-/* â”€â”€â”€â”€â”€ SCROLLABLE CONTENT â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ SCROLLABLE CONTENT Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .content{
   flex:1;overflow-y:auto;overflow-x:hidden;
   padding:24px 32px;
@@ -125,7 +125,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .content::-webkit-scrollbar-track{background:transparent}
 .content::-webkit-scrollbar-thumb{background:#d4d4d8;border-radius:10px}
 
-/* â”€â”€â”€â”€â”€ BENTO BLOCKS â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ BENTO BLOCKS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .bento{
   background:#fff;border-radius:var(--r);
   border:1px solid var(--border);padding:24px;
@@ -227,7 +227,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
 .ag-title{font-weight:700;font-size:14px;color:var(--text-main);margin-bottom:2px}
 .ag-desc{font-weight:500;font-size:12px;color:var(--text-dim)}
 
-/* â”€â”€â”€â”€â”€ RESPONSIVE RULES â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ RESPONSIVE RULES Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 /* Tablet */
 @media(max-width:1300px){
   .content{grid-template-columns:repeat(8, 1fr)}
@@ -302,7 +302,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
 <body>
 
 <div class="dashboard-wrap">
-  <!-- â•â•â• SIDEBAR â•â•â• -->
+  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â SIDEBAR Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
   <aside class="sidebar" id="sidebar">
     <div class="sb-logo"><img src="images/whitelogo.webp" alt="Stackly" style="width:20px;height:20px;object-fit:contain"/></div>
     <nav class="sb-nav">
@@ -327,11 +327,11 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
       </a>
     </nav>
     <div class="sb-bottom">
-      <div class="sb-av"><img src="images/pexels-gustavo-fring-3984882.webp" alt="User"/></div>
+      <div class="sb-av" style="display:flex;align-items:center;justify-content:center;background:#fff;color:var(--text-main);"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:20px;height:20px;stroke-width:2;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
     </div>
   </aside>
 
-  <!-- â•â•â• MAIN â•â•â• -->
+  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â MAIN Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
   <main class="main">
     <div class="sb-overlay" id="overlay" onclick="toggleSb()"></div>
     
@@ -343,7 +343,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
         </button>
         <div class="hd-title-grp">
           <h1>Research Control Center</h1>
-          <p>Biotech Division Â· Stackly HQ</p>
+          <p id="userEmailDisplay">Biotech Division &middot; Stackly HQ</p>
         </div>
       </div>
       <div class="hd-right">
@@ -354,7 +354,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
         </div>
         <button class="btn-icon">
           <span class="btn-badge"></span>
-          <svg viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path></svg>
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;stroke-width:2;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </button>
       </div>
     </header>
@@ -381,7 +381,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
         </div>
         <div class="kpi-right">
           <div class="kpi-icon blue" style="background:var(--s-blue);color:var(--p-blue)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div>
-          <div class="tag-up">â†‘ 12%</div>
+          <div class="tag-up">Ã¢â€ â€˜ 12%</div>
         </div>
       </div>
 
@@ -393,7 +393,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
         </div>
         <div class="kpi-right">
           <div class="kpi-icon teal" style="background:var(--s-teal);color:var(--p-teal)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v8l9-11h-7z"></path></svg></div>
-          <div class="tag-up">â†‘ 8%</div>
+          <div class="tag-up">Ã¢â€ â€˜ 8%</div>
         </div>
       </div>
 
@@ -401,7 +401,7 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
       <div class="bento block-chart gsap-bento">
         <div class="b-head">
           <div class="b-title">Synthetic Output vs Actuals</div>
-          <a href="404.html" class="b-link">Analysis â†’</a>
+          <a href="404.html" class="b-link">Analysis Ã¢â€ â€™</a>
         </div>
         <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
       </div>
@@ -413,22 +413,22 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
         </div>
         <div class="pipe-list">
           <div class="pipe-row">
-            <div class="p-icon b-green">ðŸ§¬</div>
+            <div class="p-icon b-green"><i class="fa-solid fa-dna"></i></div>
             <div class="p-info"><div class="p-name">STK-118</div><div class="p-phase">FDA Review</div></div>
             <div class="p-badge b-green">91%</div>
           </div>
           <div class="pipe-row">
-            <div class="p-icon b-blue">ðŸ’Š</div>
+            <div class="p-icon b-blue"><i class="fa-solid fa-pills"></i></div>
             <div class="p-info"><div class="p-name">STK-201</div><div class="p-phase">Phase II Trial</div></div>
             <div class="p-badge b-blue">62%</div>
           </div>
           <div class="pipe-row">
-            <div class="p-icon b-purple">ðŸ”¬</div>
-            <div class="p-info"><div class="p-name">STK-712</div><div class="p-phase">Phase I Â· mRNA</div></div>
+            <div class="p-icon b-purple">Ã°Å¸â€Â¬</div>
+            <div class="p-info"><div class="p-name">STK-712</div><div class="p-phase">Phase I Ã‚Â· mRNA</div></div>
             <div class="p-badge b-purple">53%</div>
           </div>
           <div class="pipe-row">
-            <div class="p-icon b-orange">ðŸ§ª</div>
+            <div class="p-icon b-orange"><i class="fa-solid fa-flask"></i></div>
             <div class="p-info"><div class="p-name">STK-509</div><div class="p-phase">Pre-clinical</div></div>
             <div class="p-badge b-orange">35%</div>
           </div>
@@ -476,14 +476,14 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
             <div class="pub-ico"><svg fill="none" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg></div>
             <div class="pub-info">
               <h4>CRISPR Target Efficiencies in Ex-Vivo Systems</h4>
-              <p>Nature Biotech Â· 2 days ago</p>
+              <p>Nature Biotech &middot; 2 days ago</p>
             </div>
           </div>
           <div class="pub-row">
             <div class="pub-ico"><svg fill="none" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg></div>
             <div class="pub-info">
               <h4>mRNA Lipid Nanoparticles Optimization</h4>
-              <p>Cell Â· 5 days ago</p>
+              <p>Cell &middot; 5 days ago</p>
             </div>
           </div>
         </div>
@@ -500,17 +500,17 @@ Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 
           </thead>
           <tbody>
             <tr>
-              <td><div class="td-strong">Genomic Sequencing v3.2</div><div class="td-sub">Phase III Â· Genetic Profiling</div></td>
+              <td><div class="td-strong">Genomic Sequencing v3.2</div><div class="td-sub">Phase III &middot; Genetic Profiling</div></td>
               <td><div class="td-strong">Dr. E. Vasquez</div></td>
               <td><span class="status-dot" style="background:var(--p-green)"></span> <span class="td-strong">Active Phase</span></td>
             </tr>
             <tr>
-              <td><div class="td-strong">STK-201 Oncology Optimization</div><div class="td-sub">Phase II Â· Colorectal</div></td>
+              <td><div class="td-strong">STK-201 Oncology Optimization</div><div class="td-sub">Phase II &middot; Colorectal</div></td>
               <td><div class="td-strong">Dr. M. Okafor</div></td>
               <td><span class="status-dot" style="background:var(--p-green)"></span> <span class="td-strong">Active Phase</span></td>
             </tr>
             <tr>
-              <td><div class="td-strong">Precision Neurology Markers</div><div class="td-sub">Pre-clinical Â· Neural Mapping</div></td>
+              <td><div class="td-strong">Precision Neurology Markers</div><div class="td-sub">Pre-clinical &middot; Neural Mapping</div></td>
               <td><div class="td-strong">Dr. J. Hartley</div></td>
               <td><span class="status-dot" style="background:var(--p-orange)"></span> <span class="td-strong" style="color:var(--text-dim)">Under Review</span></td>
             </tr>
@@ -659,9 +659,18 @@ Chart.defaults.color = "#71717a";
     }
   });
 })();
+// Set User Email
+(function(){
+  const userEmail = localStorage.getItem('stacklyUserEmail');
+  if(userEmail) {
+    const el = document.getElementById('userEmailDisplay');
+    if(el) el.innerHTML = `Signed in as <strong style="color:var(--text-main)">${userEmail}</strong> &middot; Stackly HQ`;
+  }
+})();
 </script>
 </body>
 </html>
+
 
 
 

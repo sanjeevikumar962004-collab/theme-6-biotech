@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Admin Dashboard â€“ Stackly Biotech</title>
+<title>Admin Dashboard - Stackly Biotech</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
@@ -35,10 +35,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-main);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* â”€â”€â”€â”€â”€ LAYOUT â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ LAYOUT Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .dashboard-wrap{display:flex;height:100vh;padding:16px;gap:16px;overflow:hidden;position:relative}
 
-/* â”€â”€â”€â”€â”€ FLOATING SIDEBAR â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ FLOATING SIDEBAR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .sidebar{
   width:85px;background:var(--card);border-radius:var(--r);
   border:1px solid var(--border);display:flex;flex-direction:column;
@@ -77,14 +77,14 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 /* Sb overlay (mobile) */
 .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499;opacity:0;transition:opacity .3s}
 
-/* â”€â”€â”€â”€â”€ MAIN AREA â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ MAIN AREA Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .main{
   flex:1;background:var(--card);border-radius:var(--r);
   border:1px solid var(--border);box-shadow:0 10px 40px -15px rgba(0,0,0,0.06);
   display:flex;flex-direction:column;overflow:hidden;min-width:0;
 }
 
-/* â”€â”€â”€â”€â”€ HEADER â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HEADER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .header{
   height:76px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid var(--border);flex-shrink:0;background:var(--card);z-index:40;
@@ -118,7 +118,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .btn-icon svg{width:18px;height:18px;stroke-width:2}
 .btn-badge{position:absolute;top:-4px;right:-4px;width:8px;height:8px;background:var(--p-rose);border-radius:50%}
 
-/* â”€â”€â”€â”€â”€ SCROLLABLE CONTENT â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ SCROLLABLE CONTENT Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .content{
   flex:1;overflow-y:auto;overflow-x:hidden;
   padding:24px 32px;
@@ -129,7 +129,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .content::-webkit-scrollbar-track{background:transparent}
 .content::-webkit-scrollbar-thumb{background:#d4d4d8;border-radius:10px}
 
-/* â”€â”€â”€â”€â”€ BENTO BLOCKS â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ BENTO BLOCKS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .bento{
   background:#fff;border-radius:var(--r);
   border:1px solid var(--border);padding:24px;
@@ -235,7 +235,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .tk-title{font-weight:700;font-size:14px;color:var(--text-main);margin-bottom:2px}
 .tk-desc{font-weight:500;font-size:12px;color:var(--text-dim)}
 
-/* â”€â”€â”€â”€â”€ RESPONSIVE RULES â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ RESPONSIVE RULES Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media(max-width:1300px){
   .content{grid-template-columns:repeat(8, 1fr)}
   .block-hero{grid-column:span 8}
@@ -309,7 +309,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 <body>
 
 <div class="dashboard-wrap">
-  <!-- â•â•â• SIDEBAR â•â•â• -->
+  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â SIDEBAR Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
   <aside class="sidebar" id="sidebar">
     <div class="sb-logo"><img src="images/whitelogo.webp" alt="Stackly" style="width:20px;height:20px;object-fit:contain"/></div>
     <nav class="sb-nav">
@@ -333,11 +333,11 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
       </a>
     </nav>
     <div class="sb-bottom">
-      <div class="sb-av"><img src="images/pexels-mikhail-nilov-8863044.webp" alt="Admin"/></div>
+      <div class="sb-av" style="display:flex;align-items:center;justify-content:center;background:#fff;color:var(--text-main);"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:20px;height:20px;stroke-width:2;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
     </div>
   </aside>
 
-  <!-- â•â•â• MAIN â•â•â• -->
+  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â MAIN Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
   <main class="main">
     <div class="sb-overlay" id="overlay" onclick="toggleSb()"></div>
 
@@ -349,7 +349,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
         </button>
         <div class="hd-title-grp">
           <h1>Infrastructure Control <span class="hd-badge">Admin</span></h1>
-          <p>sys.stackly.io Â· Core Region</p>
+          <p id="adminEmailDisplay">sys.stackly.io &middot; Core Region</p>
         </div>
       </div>
       <div class="hd-right">
@@ -360,7 +360,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
         </div>
         <button class="btn-icon">
           <span class="btn-badge"></span>
-          <img src="./images/p1.webp" alt="">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;stroke-width:2;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </button>
       </div>
     </header>
@@ -407,7 +407,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
       <div class="bento block-chart gsap-bento">
         <div class="b-head">
           <div class="b-title">Network Bandwidth (Rx/Tx)</div>
-          <a href="404.html" class="b-link">Logs â†’</a>
+          <a href="404.html" class="b-link">Logs Ã¢â€ â€™</a>
         </div>
         <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
       </div>
@@ -425,16 +425,16 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
           </div>
           <div class="audit-row">
             <div class="a-icon" style="background:var(--s-gray);color:var(--text-main)">>_</div>
-            <div class="a-info"><div class="a-name">Bash Login</div><div class="a-phase">Admin Â· TTY1</div></div>
+            <div class="a-info"><div class="a-name">Bash Login</div><div class="a-phase">Admin &middot; TTY1</div></div>
             <div class="a-badge" style="background:var(--s-gray);color:var(--text-main)">OK</div>
           </div>
           <div class="audit-row">
-            <div class="a-icon" style="background:var(--s-blue);color:var(--p-blue)">â†“</div>
+            <div class="a-icon" style="background:var(--s-blue);color:var(--p-blue)"><i class="fa-solid fa-arrow-down"></i></div>
             <div class="a-info"><div class="a-name">Dpkg Install</div><div class="a-phase">sys-update-3.x</div></div>
             <div class="a-badge" style="background:var(--s-blue);color:var(--p-blue)">WARN</div>
           </div>
           <div class="audit-row">
-            <div class="a-icon" style="background:var(--s-green);color:var(--p-green)">âœ“</div>
+            <div class="a-icon" style="background:var(--s-green);color:var(--p-green)"><i class="fa-solid fa-check"></i></div>
             <div class="a-info"><div class="a-name">Firewall UFW</div><div class="a-phase">Rule Appended</div></div>
             <div class="a-badge" style="background:var(--s-green);color:var(--p-green)">OK</div>
           </div>
@@ -677,9 +677,18 @@ Chart.defaults.color = "#71717a";
     }
   });
 })();
+// Set Admin Email
+(function(){
+  const userEmail = localStorage.getItem('stacklyUserEmail');
+  if(userEmail) {
+    const el = document.getElementById('adminEmailDisplay');
+    if(el) el.innerHTML = `Admin <strong style="color:var(--text-main)">${userEmail}</strong> &middot; Core Region`;
+  }
+})();
 </script>
 </body>
 </html>
+
 
 
 
