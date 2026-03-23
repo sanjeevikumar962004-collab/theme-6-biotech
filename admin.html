@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -35,10 +35,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-main);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ LAYOUT Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ LAYOUT â”€â”€â”€â”€â”€ */
 .dashboard-wrap{display:flex;height:100vh;padding:16px;gap:16px;overflow:hidden;position:relative}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ FLOATING SIDEBAR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ FLOATING SIDEBAR â”€â”€â”€â”€â”€ */
 .sidebar{
   width:85px;background:var(--card);border-radius:var(--r);
   border:1px solid var(--border);display:flex;flex-direction:column;
@@ -77,14 +77,14 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 /* Sb overlay (mobile) */
 .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499;opacity:0;transition:opacity .3s}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ MAIN AREA Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ MAIN AREA â”€â”€â”€â”€â”€ */
 .main{
   flex:1;background:var(--card);border-radius:var(--r);
   border:1px solid var(--border);box-shadow:0 10px 40px -15px rgba(0,0,0,0.06);
   display:flex;flex-direction:column;overflow:hidden;min-width:0;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ HEADER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ HEADER â”€â”€â”€â”€â”€ */
 .header{
   height:76px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid var(--border);flex-shrink:0;background:var(--card);z-index:40;
@@ -118,7 +118,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .btn-icon svg{width:18px;height:18px;stroke-width:2}
 .btn-badge{position:absolute;top:-4px;right:-4px;width:8px;height:8px;background:var(--p-rose);border-radius:50%}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ SCROLLABLE CONTENT Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ SCROLLABLE CONTENT â”€â”€â”€â”€â”€ */
 .content{
   flex:1;overflow-y:auto;overflow-x:hidden;
   padding:24px 32px;
@@ -129,7 +129,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .content::-webkit-scrollbar-track{background:transparent}
 .content::-webkit-scrollbar-thumb{background:#d4d4d8;border-radius:10px}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ BENTO BLOCKS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ BENTO BLOCKS â”€â”€â”€â”€â”€ */
 .bento{
   background:#fff;border-radius:var(--r);
   border:1px solid var(--border);padding:24px;
@@ -235,7 +235,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 .tk-title{font-weight:700;font-size:14px;color:var(--text-main);margin-bottom:2px}
 .tk-desc{font-weight:500;font-size:12px;color:var(--text-dim)}
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ RESPONSIVE RULES Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* â”€â”€â”€â”€â”€ RESPONSIVE RULES â”€â”€â”€â”€â”€ */
 @media(max-width:1300px){
   .content{grid-template-columns:repeat(8, 1fr)}
   .block-hero{grid-column:span 8}
@@ -281,18 +281,6 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
   .bento{
     grid-column:1 / -1 !important;
     border-radius:16px;padding:20px;
-  }
-  .block-hero{padding:24px}
-  .hero-content h2{font-size:22px}
-  .kpi-val{font-size:28px}
-  
-  .block-table{overflow-x:auto}
-  .tb-modern{min-width:500px}
-}
-.profile-chip {
-  display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 6px;
-  background: transparent; border-radius: 12px; cursor: pointer; border: 1px solid transparent; transition: all 0.2s; margin-left:8px;
-}
 .profile-chip:hover { background: #f4f4f5; border-color: var(--border-active); }
 .pc-icon {
   width: 34px; height: 34px; border-radius: 8px; background: #e0e7ff; color: #4f46e5;
@@ -309,7 +297,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
 <body>
 
 <div class="dashboard-wrap">
-  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â SIDEBAR Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
+  <!-- â•â•â• SIDEBAR â•â•â• -->
   <aside class="sidebar" id="sidebar">
     <div class="sb-logo"><img src="images/whitelogo.webp" alt="Stackly" style="width:20px;height:20px;object-fit:contain"/></div>
     <nav class="sb-nav">
@@ -337,7 +325,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
     </div>
   </aside>
 
-  <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â MAIN Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
+  <!-- â•â•â• MAIN â•â•â• -->
   <main class="main">
     <div class="sb-overlay" id="overlay" onclick="toggleSb()"></div>
 
@@ -407,7 +395,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
       <div class="bento block-chart gsap-bento">
         <div class="b-head">
           <div class="b-title">Network Bandwidth (Rx/Tx)</div>
-          <a href="404.html" class="b-link">Logs Ã¢â€ â€™</a>
+          <a href="404.html" class="b-link">Logs</a>
         </div>
         <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
       </div>
@@ -428,16 +416,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
             <div class="a-info"><div class="a-name">Bash Login</div><div class="a-phase">Admin &middot; TTY1</div></div>
             <div class="a-badge" style="background:var(--s-gray);color:var(--text-main)">OK</div>
           </div>
-          <div class="audit-row">
-            <div class="a-icon" style="background:var(--s-blue);color:var(--p-blue)"><i class="fa-solid fa-arrow-down"></i></div>
-            <div class="a-info"><div class="a-name">Dpkg Install</div><div class="a-phase">sys-update-3.x</div></div>
-            <div class="a-badge" style="background:var(--s-blue);color:var(--p-blue)">WARN</div>
-          </div>
-          <div class="audit-row">
-            <div class="a-icon" style="background:var(--s-green);color:var(--p-green)"><i class="fa-solid fa-check"></i></div>
-            <div class="a-info"><div class="a-name">Firewall UFW</div><div class="a-phase">Rule Appended</div></div>
-            <div class="a-badge" style="background:var(--s-green);color:var(--p-green)">OK</div>
-          </div>
+          
         </div>
       </div>
 
@@ -527,11 +506,7 @@ body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(-
               <td><div class="td-strong">Cron_Worker</div></td>
               <td><span class="status-dot" style="background:var(--p-green)"></span> <span class="td-strong">Connected</span></td>
             </tr>
-            <tr>
-              <td><div class="td-strong">Data Analytics Agent</div><div class="td-sub">IP: 10.0.2.14</div></td>
-              <td><div class="td-strong">ReadOnly_Reporter</div></td>
-              <td><span class="status-dot" style="background:var(--p-orange)"></span> <span class="td-strong" style="color:var(--text-dim)">Idle</span></td>
-            </tr>
+           
           </tbody>
         </table>
       </div>
