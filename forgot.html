@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Reset Password - Stackly Biotech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #ffffff;
+            --text-main: #00111e;
+            --text-dim: #64748b;
+            --border: #e2e8f0;
+            --accent: #0d7ea6;
+            --accent-glow: #62d8e8;
+            --error: #ef4444;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-main); height: 100vh; overflow: hidden; }
+        
+        .auth-container { display: flex; height: 100vh; width: 100%; direction: ltr; }
+        
+        /* Left Brand Side */
+        .auth-brand { 
+            flex: 1; position: relative; display: flex; flex-direction: column; justify-content: space-between;
+            padding: 60px; color: #fff; overflow: hidden;
+            background: linear-gradient(rgba(1, 33, 59, 0.4), rgba(15, 23, 42, 0.9)), url('images/hero\ 1.webp') center/cover no-repeat;
+        }
+        @media (max-width: 992px) { .auth-brand { display: none; } body { overflow: auto; } }
+        
+        .brand-logo img { height: 32px; filter: brightness(0) invert(1); }
+        .brand-text h1 { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1.5px; }
+        .brand-text p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 400px; line-height: 1.6; }
+        
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; z-index: 0; }
+        .orb-1 { width: 400px; height: 400px; background: var(--accent); top: -100px; left: -100px; animation: float 10s ease-in-out infinite alternate; }
+        .brand-content { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        @keyframes float { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(40px) scale(1.1); } }
+
+        /* Right Form Side */
+        .auth-form-side {
+            width: 100%; max-width: 560px; background: var(--surface); display: flex; flex-direction: column;
+            justify-content: center; padding: 60px 80px; position: relative; overflow-y: auto; box-shadow: -20px 0 50px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 768px) { .auth-form-side { padding: 40px 24px; max-width: 100%; } }
+        
+        .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text-dim); text-decoration: none; position: absolute; top: 40px; left: 80px; transition: color 0.2s; }
+        @media (max-width: 768px) { .back-link { left: 24px; top: 24px; } }
+        .back-link:hover { color: var(--text-main); }
+        .back-link svg { width: 16px; height: 16px; }
+
+        .auth-header { margin-bottom: 32px; margin-top: 40px; }
+        .auth-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+        .auth-header p { font-size: 15px; color: var(--text-dim); line-height: 1.5; }
+
+                /* Role Toggle Segment */
+        .role-toggle {
+            display: flex; background: #f1f5f9; border-radius: 12px; padding: 6px; margin-bottom: 32px; position: relative;
+        }
+        .role-btn {
+            flex: 1; text-align: center; padding: 12px 0; font-size: 14px; font-weight: 600; color: var(--text-dim);
+            cursor: pointer; position: relative; z-index: 2; transition: color 0.3s;
+        }
+        .role-btn.active { color: var(--text-main); }
+        .role-slider {
+            position: absolute; top: 6px; left: 6px; height: calc(100% - 12px); width: calc(50% - 6px); background: #fff;
+            border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); z-index: 1;
+        }
+
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
+        .form-input {
+            width: 100%; padding: 16px; border: 1px solid var(--border); border-radius: 12px;
+            font-family: 'Inter', sans-serif; font-size: 15px; background: #fafafa; outline: none; transition: all 0.2s;
+        }
+        .form-input:focus { background: #fff; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(13, 126, 166, 0.1); }
+        
+        /* Validation State */
+        .form-input:invalid:not(:placeholder-shown) { border-color: var(--error); }
+        .form-error { display: none; color: var(--error); font-size: 12px; margin-top: 6px; font-weight: 500; }
+        .form-input:invalid:not(:placeholder-shown) ~ .form-error { display: block; }
+
+        .btn-submit {
+            width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: #00111e; color: #fff; border: none; padding: 18px; border-radius: 12px;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; cursor: pointer;
+            transition: all 0.3s; position: relative; overflow: hidden; z-index: 1;
+        }
+        .btn-submit::before {
+            content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+            z-index: -1; opacity: 0; transition: opacity 0.3s;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(13, 126, 166, 0.2); }
+        .btn-submit:hover::before { opacity: 1; }
+        
+        /* Dynamic Success Alert */
+        .success-box {
+            display: none; background: #f0fdf4; border: 1px solid #16a34a; border-radius: 12px;
+            padding: 16px; color: #166534; font-size: 14px; font-weight: 500; align-items: flex-start;
+            gap: 12px; margin-bottom: 24px;
+        }
+        .success-box svg { width: 20px; height: 20px; flex-shrink: 0; color: #16a34a; margin-top: 2px; }
+
+    </style>
+</head>
+<body>
+
+<div class="auth-container">
+    
+    <!-- Left Brand Section -->
+    <div class="auth-brand">
+        <div class="orb orb-1"></div>
+        <div class="brand-content" data-aos="fade-in" data-aos-duration="1500">
+            <div class="brand-logo">
+                <img src="images/whitelogo.webp" alt="Stackly Biotech" />
+            </div>
+            <div class="brand-text">
+                <h2>Secure Recovery.</h2>
+                <p>Advanced biochemical encryption ensures only verified staff can request localized protocol recovery modules.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="auth-form-side">
+        <a href="login.html" class="back-link">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back to Login
+        </a>
+
+        <div class="auth-header" data-aos="fade-up" data-aos-delay="100">
+            <h2>Reset Password</h2>
+            <p>Enter the email address tied to your account and we will send a secure reset link.</p>
+        </div>
+
+        <div class="role-toggle" data-aos="fade-up" data-aos-delay="150">
+            <div class="role-slider" id="roleSlider"></div>
+            <div class="role-btn active" id="btnUser" onclick="selectRole('user')">Login as User</div>
+            <div class="role-btn" id="btnAdmin" onclick="selectRole('admin')">Login as Admin</div>
+        </div>
+        <input type="hidden" id="authRole" value="user" />
+
+        <div class="success-box" id="successMsg" data-aos="fade-in">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div>
+                <strong>Transmission sent!</strong>
+                <div style="margin-top:4px; font-weight:400; color:#15803d">If your email exists in our registry, an encrypted reset link will arrive momentarily.</div>
+            </div>
+        </div>
+
+        <form id="forgotForm" onsubmit="handleReset(event)" data-aos="fade-up" data-aos-delay="200">
+            
+            <div class="form-group">
+                <label class="form-label" for="txtEmail">Registered Authority Email</label>
+                <input type="email" id="txtEmail" class="form-input" placeholder="researcher@stackly.io" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                <span class="form-error">Valid institutional email required.</span>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btnSbt">
+                Send Reset Link
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+
+    function selectRole(role) {
+        document.getElementById('authRole').value = role;
+        const slider = document.getElementById('roleSlider');
+        const btnUser = document.getElementById('btnUser');
+        const btnAdmin = document.getElementById('btnAdmin');
+        if (role === 'admin') {
+            slider.style.transform = 'translateX(100%)';
+            btnUser.classList.remove('active');
+            btnAdmin.classList.add('active');
+        } else {
+            slider.style.transform = 'translateX(0)';
+            btnAdmin.classList.remove('active');
+            btnUser.classList.add('active');
+        }
+    }
+
+    function handleReset(event) {
+        event.preventDefault(); 
+        
+        const form = document.getElementById('forgotForm');
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const btn = document.getElementById('btnSbt');
+        const box = document.getElementById('successMsg');
+        
+        btn.innerHTML = 'Validating Registry...';
+        btn.style.opacity = '0.7';
+
+        setTimeout(() => {
+            // Fake secure transmission
+                        const email = document.getElementById('txtEmail').value.trim();
+            localStorage.setItem('stacklyUserEmail', email);
+            const role = document.getElementById('authRole').value;
+            window.location.href = role === 'admin' ? 'admin.html' : 'dashboard.html';
+            
+        }, 1200);
+    }
+</script>
+</body>
+</html>

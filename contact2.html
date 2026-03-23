@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html data-wf-domain="stackly.webflow.io" data-wf-page="696f019bf60ecdcc90dd8e8d" data-wf-site="696f017270bc35c55e784979" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Us v2 - Stackly Biotech</title>
+    <meta content="Connect with the leaders in genomics and advanced precision medicine." name="description" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    
+    <link href="https://cdn.prod.website-files.com/696f017270bc35c55e784979/css/heltro.webflow.shared.3e0d0a40f.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- AOS Interface Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    
+
+    <style>
+      /* --- MODERN CONTACT V2 STYLES --- */
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f1f5f9;
+        overflow-x: hidden;
+      }
+      
+      /* ANIMATED GRADIENT HERO */
+      @keyframes gradientSlide {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .c2-hero {
+        padding: 220px 20px 280px;
+        text-align: center;
+        background: linear-gradient(-45deg, #01213b, #013a65, #0d7ea6, #0f172a);
+        background-size: 400% 400%;
+        animation: gradientSlide 15s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+      }
+      .c2-particles {
+        position: absolute; inset: 0; background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>');
+        animation: flowPattern 40s linear infinite; pointer-events: none;
+      }
+      @keyframes flowPattern { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
+
+      .c2-tag {
+        display: inline-block; padding: 10px 24px; background: rgba(255, 255, 255, 0.1); color: #62d8e8;
+        backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 700; border-radius: 100px;
+        font-size: 14px; margin-bottom: 30px; letter-spacing: 0.1em; text-transform: uppercase;
+      }
+      .c2-hero h1 {
+        font-family: 'Space Grotesk', sans-serif; font-size: 72px; font-weight: 700; color: #ffffff;
+        margin-bottom: 24px; letter-spacing: -2.5px; line-height: 1.1; max-width: 900px; margin: 0 auto 20px;
+      }
+      .c2-hero p {
+        font-size: 20px; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto; line-height: 1.6; font-weight: 400;
+      }
+
+      /* GLASSMORPHISM FLOATING PANEL */
+      .c2-glass-wrapper {
+        max-width: 1200px; margin: -180px auto 140px; padding: 0 24px; position: relative; z-index: 10;
+      }
+      .c2-glass-panel {
+        background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(40px);
+        border-radius: 32px; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.2) inset;
+        display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; transform: translateZ(0); /* Hardware accel */
+      }
+      
+      /* LEFT SIDE: Animated Info Box */
+      .c2-info {
+        background: #013a65; position: relative; padding: 80px 60px; color: #fff; overflow: hidden;
+      }
+      .c2-info::before {
+        content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px;
+        background: radial-gradient(circle, rgba(98, 216, 232, 0.3) 0%, transparent 70%); border-radius: 50%;
+        animation: pulseBlob 8s ease-in-out infinite alternate; pointer-events: none;
+      }
+      @keyframes pulseBlob { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.1) translate(-20px,-20px); } }
+      .c2-info h2 { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 24px; color: #fff;}
+      .c2-info p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 60px; line-height: 1.6; max-width: 400px; }
+      
+      .c2-contact-item {
+        display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .c2-contact-item:hover { transform: translateX(10px); }
+      .c2-ci-icon {
+        width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.1);
+        display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px); color: #62d8e8; border: 1px solid rgba(255,255,255,0.1);
+        transition: background 0.3s, color 0.3s;
+      }
+      .c2-contact-item:hover .c2-ci-icon { background: #62d8e8; color: #00111e; }
+      .c2-ci-text h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #fff; }
+      .c2-ci-text a, .c2-ci-text span { font-size: 16px; color: rgba(255,255,255,0.7); text-decoration: none; display: block; line-height: 1.5; transition: color 0.2s;}
+      .c2-ci-text a:hover { color: #62d8e8; }
+
+      /* RIGHT SIDE: Animated Form */
+      .c2-form-side {
+        padding: 80px 60px; background: #ffffff;
+      }
+      .c2-form-side h3 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: #00111e; margin-bottom: 12px; }
+      .c2-form-side > p { font-size: 16px; color: #4c5f72; margin-bottom: 40px; }
+      .c2-form { display: flex; flex-direction: column; gap: 32px; }
+      
+      /* Floating Label Inputs */
+      .fly-group { position: relative; }
+      .fly-group.split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      
+      .fly-input {
+        width: 100%; border: none; border-bottom: 2px solid #e2e8f0; background: transparent;
+        padding: 10px 0; font-size: 16px; font-family: inherit; color: #0f172a; outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .fly-input:focus { border-bottom-color: #0d7ea6; }
+      .fly-label {
+        position: absolute; left: 0; top: 12px; font-size: 16px; color: #64748b; font-weight: 400;
+        pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .fly-input:focus ~ .fly-label, .fly-input:valid ~ .fly-label {
+        top: -16px; font-size: 12px; color: #0d7ea6; font-weight: 600;
+      }
+      textarea.fly-input { resize: none; min-height: 120px; }
+      
+      /* Checkbox Animation */
+      .c2-checkbox { display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; }
+      .c2-checkbox input { display: none; }
+      .cb-box {
+        width: 24px; height: 24px; border: 2px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .cb-box svg { width: 14px; height: 14px; fill: none; stroke: white; stroke-width: 3; stroke-dasharray: 20; stroke-dashoffset: 20; transition: stroke-dashoffset 0.3s 0.1s; }
+      .c2-checkbox input:checked + .cb-box { background: #013a65; border-color: #013a65; }
+      .c2-checkbox input:checked + .cb-box svg { stroke-dashoffset: 0; }
+      .c2-checkbox span { font-size: 14px; color: #4c5f72; }
+
+      /* Submit Button */
+      .btn-c2 {
+        display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+        background: #00111e; color: #fff; border: none; padding: 20px 48px; border-radius: 100px;
+        font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); margin-top: 10px; overflow: hidden; position: relative; z-index: 1;
+      }
+      .btn-c2::before {
+        content: ''; position: absolute; inset: 0; background: linear-gradient(-45deg, #0d7ea6, #62d8e8); z-index: -1;
+        transition: opacity 0.3s; 
+      }
+      .btn-c2:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(13, 126, 166, 0.3); }
+      .btn-c2:hover::before { opacity: 1; }
+      .btn-c2 svg { width: 20px; height: 20px; transition: transform 0.3s; }
+      .btn-c2:hover svg { transform: translateX(6px) rotate(-15deg); }
+
+      /* FAQ Mini Section */
+      .c2-faq { max-width: 1000px; margin: 0 auto 100px; padding: 0 24px; text-align: center; }
+      .c2-faq h3 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; color: #00111e; margin-bottom: 40px; }
+      .faq-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: left; }
+      .faq-card { background: #fff; padding: 32px; border-radius: 20px; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; }
+      .faq-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+      .faq-card h4 { font-size: 18px; font-weight: 700; color: #00111e; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+      .faq-card h4::before { content: 'Q.'; color: #0d7ea6; font-family: 'Space Grotesk'; font-size: 22px; line-height: 1; }
+      .faq-card p { font-size: 15px; color: #4c5f72; line-height: 1.6; }
+
+      /* RESPONSIVENESS */
+      @media(max-width: 992px) {
+        .c2-glass-panel { grid-template-columns: 1fr; }
+        .c2-info { padding: 60px 40px; }
+        .c2-form-side { padding: 60px 40px; }
+        .faq-grid { grid-template-columns: 1fr; }
+      }
+      @media(max-width: 768px) {
+        .c2-hero h1 { font-size: 40px; }
+        .c2-glass-wrapper { margin-top: -100px; }
+        .fly-group.split { grid-template-columns: 1fr; }
+        .c2-info, .c2-form-side { padding: 40px 24px; }
+      }
+    </style>
+</head>
+
+<body>
+    <!-- â•â•â• HEADER (COPIED FROM INDEX.HTML) â•â•â• -->
+            <!-- === NEW MODERN HEADER === -->
+    <!-- === RESTORED MOD HEADER === -->
+    <header class="stackly-header">
+        <div class="sh-container">
+            <a href="index.html" class="sh-logo">
+                <img src="images/whitelogo.webp" alt="Stackly Logo" />
+            </a>
+            <nav class="sh-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="service.html">Services</a>
+                <a href="contact2.html">Contact</a>
+                <a href="login.html" class="sh-client-btn">Login</a>
+            </nav>
+            <div class="sh-mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <main>
+      
+      <!-- HERO -->
+      <section class="c2-hero">
+        <div class="c2-particles"></div>
+        <div data-aos="zoom-out" data-aos-duration="1000">
+          <div class="c2-tag">Support & Partnerships</div>
+          <h1>How can we transform medicine together?</h1>
+          <p>Whether you're exploring clinical partnerships, investigating our genomic pipeline, or seeking scientific support, our team is ready to assist.</p>
+        </div>
+      </section>
+
+      <!-- GLASSMORPHISM INFO PANEL -->
+      <section class="c2-glass-wrapper">
+        <div class="c2-glass-panel" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+          
+          <!-- Info Column -->
+          <div class="c2-info">
+            <h2>Get in touch</h2>
+            <p>Our dedicated teams in San Diego and Oxford are available to answer your biomedical inquiries.</p>
+            
+            <div class="c2-contact-item" data-aos="fade-right" data-aos-delay="400">
+              <div class="c2-ci-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="c2-ci-text">
+                <h3>Email us</h3>
+                <a href="mailto:partnerships@stackly.io">partnerships@stackly.io</a>
+                <a href="mailto:support@stackly.io">support@stackly.io</a>
+              </div>
+            </div>
+            
+            <div class="c2-contact-item" data-aos="fade-right" data-aos-delay="500">
+              <div class="c2-ci-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="c2-ci-text">
+                <h3>Call us</h3>
+                <a href="tel:1234567890">123 (US)</a>
+                <a href="tel:442012345678">+44 20 1234 5678 (EU)</a>
+              </div>
+            </div>
+            
+            <div class="c2-contact-item" data-aos="fade-right" data-aos-delay="600">
+              <div class="c2-ci-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="c2-ci-text">
+                <h3>Visit us</h3>
+                <span>410 Sandtown Road<br/>California 94001, USA</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Animated Form Column -->
+          <div class="c2-form-side">
+            <h3 data-aos="fade-down" data-aos-delay="500">Send a direct inquiry</h3>
+            <p data-aos="fade-down" data-aos-delay="600">Fill out the fields below to initiate a private consultation.</p>
+            
+            <form class="c2-form" action="404.html" onsubmit="event.preventDefault(); window.location.href='404.html';">
+              <div class="fly-group split">
+                <div class="fly-group" data-aos="fade-up" data-aos-delay="700">
+                  <input type="text" class="fly-input" id="fn" required />
+                  <label for="fn" class="fly-label">First Name</label>
+                </div>
+                <div class="fly-group" data-aos="fade-up" data-aos-delay="800">
+                  <input type="text" class="fly-input" id="ln" required />
+                  <label for="ln" class="fly-label">Last Name</label>
+                </div>
+              </div>
+              
+              <div class="fly-group" data-aos="fade-up" data-aos-delay="900">
+                <input type="email" class="fly-input" id="em" required />
+                <label for="em" class="fly-label">Work Email Address</label>
+              </div>
+              
+              <div class="fly-group" data-aos="fade-up" data-aos-delay="1000">
+                <textarea class="fly-input" id="ms" required></textarea>
+                <label for="ms" class="fly-label">How can we assist you?</label>
+              </div>
+              
+              <label class="c2-checkbox" data-aos="fade-up" data-aos-delay="1100">
+                <input type="checkbox" required />
+                <div class="cb-box">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>I agree to Stackly's Privacy Policy & Terms.</span>
+              </label>
+              
+              <div data-aos="fade-up" data-aos-delay="1200">
+                <button type="submit" class="btn-c2">
+                  Submit Inquiry 
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </section>
+      
+      
+
+<!-- === FAQ FROM BLOG === -->
+<section class="rt-faq">
+            <div class="w-layout-blockcontainer rt-container-medium-v2 w-container">
+                <div class="w-layout-vflex rt-faq-main-wrapper">
+                    <div class="w-layout-vflex rt-faq-top-v2 rt-top-content-gap rt-text-center">
+                        <h2 data-w-id="22809e06-afd1-498b-1811-da55e9b956bd"  class="rt-gap-off">
+                            Questions in mind? Weâ€™re ready with solutions!</h2>
+                    </div>
+                    <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339469"  data-current="Tab 1"
+                        data-easing="ease" data-duration-in="300" data-duration-out="100"
+                        class="rt-faq-contect-box w-tabs">
+                        <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33946a" 
+                            class="rt-faq-left-v2 w-tab-menu">
+                            <a data-w-tab="Tab 1" data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33946b"
+                                class="rt-tab w-inline-block w-tab-link w--current">
+                                <div class="rt-faq-left-part-content">
+                                    <div>Research Questions</div>
+                                    <div class="rt-faq-arrow-box">
+                                        <img style="filter:invert(100%)" loading="lazy" alt="arrow"
+                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
+                                            class="rt-faq-one" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-tab="Tab 2" data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339471"
+                                class="rt-tab w-inline-block w-tab-link">
+                                <div class="rt-faq-left-part-content">
+                                    <div>Lab health</div>
+                                    <div class="rt-faq-arrow-box">
+                                        <img width="10" style="filter:invert(0%)" alt="arrow"
+                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
+                                            loading="lazy" class="rt-faq-two" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-tab="Tab 3" data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339477"
+                                class="rt-tab w-inline-block w-tab-link">
+                                <div class="rt-faq-left-part-content">
+                                    <div>Clinical trials</div>
+                                    <div class="rt-faq-arrow-box">
+                                        <img style="filter:invert(0%)" loading="lazy" alt="arrow"
+                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
+                                            class="rt-faq-three" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-tab="Tab 4" data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33947d"
+                                class="rt-tab w-inline-block w-tab-link">
+                                <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33947e" class="rt-faq-left-part-content">
+                                    <div>Biotech services</div>
+                                    <div class="rt-faq-arrow-box">
+                                        <img width="10" style="filter:invert(0%)" alt="arrow"
+                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
+                                            loading="lazy" class="rt-faq-four" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a data-w-tab="Tab 5" data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339483"
+                                class="rt-tab w-inline-block w-tab-link">
+                                <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339484"
+                                    class="rt-faq-left-part-content rt-botton-border-off">
+                                    <div>Research data</div>
+                                    <div class="rt-faq-arrow-box">
+                                        <img style="filter:invert(0%)" loading="lazy" alt="arrow"
+                                            src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/6982cc9585d9d14180e08057_Arrow%201%20(1).svg"
+                                            class="rt-faq-five" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e339489" 
+                            class="rt-faq-tab-v2 w-tab-content">
+                            <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
+                                <div class="rt-question-item-wrapper">
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33948c"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How do you ensure
+                                                    patient safety and privacy?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">
+                                                        Yes, same-day and emergency appointments are available, subject
+                                                        to doctor availability. We prioritize urgent cases and recommend
+                                                        contacting us immediately for prompt assistance.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e33949a"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you provide
+                                                    preventive health checkups?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, preventive
+                                                        health checkups are available with prior booking. We encourage
+                                                        routine screenings to detect potential health concerns early and
+                                                        support long-term wellbeing.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e3394a8"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you offer diagnostic
+                                                    and laboratory services?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, comprehensive
+                                                        diagnostic and laboratory services are available on-site with
+                                                        scheduled appointments. We ensure accurate testing, timely
+                                                        reports, and coordinated care for effective treatment planning.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e3394b6"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you offer walk-in or
+                                                    urgent care appointments?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, walk-in and
+                                                        urgent care services are available based on doctor availability.
+                                                        We prioritize emergency and critical cases to ensure timely
+                                                        medical attention.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="5a419fc4-f1ac-55da-2c15-4cf81e3394c4"
+                                        class="rt-question-dropdown rt-border-none w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Can I consult a doctor
+                                                    without a prior appointment?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, consultations
+                                                        without prior appointments may be possible depending on
+                                                        availability. However, we recommend scheduling in advance to
+                                                        reduce waiting time and ensure convenience.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 2" class="w-tab-pane">
+                                <div class="rt-question-item-wrapper">
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="453fc1bd-2e9a-0868-6839-ee9ccbceba28"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How often should I have
+                                                    a general health check-up?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">An annual health
+                                                        check-up is recommended, or as advised by your doctor based on
+                                                        your age and medical history.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="453fc1bd-2e9a-0868-6839-ee9ccbceba36"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">What should I bring to
+                                                    my first visit?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Please bring a
+                                                        valid ID, previous medical records, current medication list, and
+                                                        insurance details (if applicable).</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="453fc1bd-2e9a-0868-6839-ee9ccbceba44"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you offer preventive
+                                                    health screenings?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, we provide
+                                                        comprehensive preventive screenings tailored to age, gender, and
+                                                        risk factors.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="453fc1bd-2e9a-0868-6839-ee9ccbceba52"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How can I maintain
+                                                    better overall health?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Maintain a balanced
+                                                        diet, exercise regularly, get adequate sleep, and attend routine
+                                                        medical check-ups.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="453fc1bd-2e9a-0868-6839-ee9ccbceba60"
+                                        class="rt-question-dropdown rt-border-none w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">When should I seek
+                                                    immediate medical care?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Seek urgent care if
+                                                        you experience severe pain, chest discomfort, breathing
+                                                        difficulty, or sudden health changes.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 3" class="w-tab-pane">
+                                <div class="rt-question-item-wrapper">
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="2c42e30e-2cbb-7f99-c13a-d623c4c902d7"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How can I book an
+                                                    appointment?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Appointments can be
+                                                        scheduled online, by phone, or directly at the hospital
+                                                        reception.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="2c42e30e-2cbb-7f99-c13a-d623c4c902e5"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Can I reschedule or
+                                                    cancel my appointment?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, you can
+                                                        reschedule or cancel by contacting us at least 24 hours in
+                                                        advance.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="2c42e30e-2cbb-7f99-c13a-d623c4c902f3"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you accept walk-in
+                                                    patients?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Walk-ins are
+                                                        accepted based on doctor availability, but scheduled
+                                                        appointments are recommended.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="2c42e30e-2cbb-7f99-c13a-d623c4c90301"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How early should I
+                                                    arrive for my appointment?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Please arrive
+                                                        15â€“20
+                                                        minutes early to complete any required paperwork.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="2c42e30e-2cbb-7f99-c13a-d623c4c9030f"
+                                        class="rt-question-dropdown rt-border-none w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Will I receive
+                                                    appointment confirmation?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, you will
+                                                        receive confirmation via call, SMS, or email after booking.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 4" class="w-tab-pane">
+                                <div class="rt-question-item-wrapper">
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="7261f61d-9c55-cc63-ad30-6227d4c747ae"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">What medical
+                                                    specialties do you offer?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">We provide a wide
+                                                        range of specialties including general medicine, cardiology,
+                                                        pediatrics, orthopedics, and more</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="7261f61d-9c55-cc63-ad30-6227d4c747bc"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you offer emergency
+                                                    services?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, our emergency
+                                                        department operates 24/7 for urgent medical needs.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="7261f61d-9c55-cc63-ad30-6227d4c747ca"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Are diagnostic tests
+                                                    available on-site?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, we offer
+                                                        laboratory services, imaging, and other diagnostic facilities
+                                                        within the hospital.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="7261f61d-9c55-cc63-ad30-6227d4c747d8"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Do you provide surgical
+                                                    services?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, we perform
+                                                        both minor and major surgical procedures with advanced
+                                                        equipment.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="7261f61d-9c55-cc63-ad30-6227d4c747e6"
+                                        class="rt-question-dropdown rt-border-none w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Are specialist
+                                                    consultations available?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, experienced
+                                                        specialists are available by appointment or referral.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 5" class="w-tab-pane">
+                                <div class="rt-question-item-wrapper">
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="dc8b9d6b-1ed5-89bc-11cf-88836cd6ca10"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How are patient records
+                                                    maintained?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">All records are
+                                                        stored securely using advanced digital systems with strict
+                                                        privacy controls.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="dc8b9d6b-1ed5-89bc-11cf-88836cd6ca1e"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Can I request a copy of
+                                                    my medical records?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, patients can
+                                                        request copies by submitting a formal application with valid
+                                                        identification.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="dc8b9d6b-1ed5-89bc-11cf-88836cd6ca2c"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Is my medical
+                                                    information confidential?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Absolutely. We
+                                                        follow strict confidentiality policies and healthcare privacy
+                                                        regulations.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="dc8b9d6b-1ed5-89bc-11cf-88836cd6ca3a"
+                                        class="rt-question-dropdown w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">How long are medical
+                                                    records stored?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Records are
+                                                        retained according to healthcare regulatory requirements and
+                                                        hospital policy.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div data-delay="500" data-hover="false"
+                                        data-w-id="dc8b9d6b-1ed5-89bc-11cf-88836cd6ca48"
+                                        class="rt-question-dropdown rt-border-none w-dropdown">
+                                        <div class="rt-question-toggle rt-change-display w-dropdown-toggle">
+                                            <div class="rt-faq-question-top">
+                                                <div class="rt-text-style-h6 rt-body-font-color">Can I update my
+                                                    personal information?</div>
+                                            </div>
+                                            <div class="rt-icon-wrapper-v2">
+                                                <div class="rt-minus"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)"
+                                                    class="rt-plus"></div>
+                                            </div>
+                                        </div>
+                                        <nav style="width:100%;height:0px" class="rt-faq-height w-dropdown-list">
+                                            <div class="rt-paragraph-wrapper">
+                                                <div class="rt-top-twenty rt-change-top-padding">
+                                                    <p class="rt-line-break rt-secondary-text-color">Yes, you can update
+                                                        your contact or personal details by informing the hospital
+                                                        administration.</p>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+</main>
+
+    <!-- â•â•â• FOOTER (COPIED FROM INDEX.HTML) â•â•â• -->
+
+    </main>
+
+    <!-- â•â•â• FOOTER (COPIED FROM INDEX.HTML) â•â•â• -->
+        <!-- === NEW MODERN FOOTER === -->
+    <footer class="modern-footer">
+      <div class="mf-glow"></div>
+      <div class="mf-container">
+        <div class="mf-grid">
+          <div class="mf-brand">
+            <a href="index.html"><img src="images/whitelogo.webp" alt="Stackly" class="mf-logo"/></a>
+            <p>Pioneering advanced biotech solutions globally. We bring precision medicine to the forefront of human health.</p>
+            <div class="mf-socials">
+              <a href="404.html"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"></path></svg></a>
+              <a href="404.html"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.27 0-.54-.03-.8-.08.54 1.7 2.13 2.94 4.01 2.98-1.47 1.15-3.32 1.83-5.33 1.83-.34 0-.68-.02-1.02-.06C3.9 20.29 6.16 21 8.58 21c7.88 0 12.21-6.54 12.21-12.21 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path></svg></a>
+              <a href="404.html"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a>
+            </div>
+          </div>
+                    <div class="mf-links">
+            <h4>Navigation</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="service.html">Services</a>
+            <a href="contact2.html">Contact</a>
+            <a href="contact2.html">Login</a>
+          </div>
+          <div class="mf-links">
+            <h4>Legal & Support</h4>
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Service</a>
+            <a href="404.html">Cookie Policy</a>
+            <a href="mailto:support@stackly.io">Help Center</a>
+          </div>
+          <div class="mf-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for the latest biotech breakthroughs.</p>
+            <form class="mf-form" action="404.html" onsubmit="event.preventDefault(); window.location.href='404.html';">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </form>
+          </div>
+        </div>
+        <div class="mf-bottom">
+          <p>&copy; 2026 Stackly Biotech. Designed with precision.</p>
+          <div class="mf-bottom-links">
+            <a href="404.html">Security</a>
+            <a href="404.html">Compliance</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+    </script>
+
+    <!-- Webflow scripts -->
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=696f017270bc35c55e784979" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/js/webflow.schunk.57027dd40c40bf05.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/js/webflow.schunk.9dfb96661114d3db.js" type="text/javascript" crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/696f017270bc35c55e784979/js/webflow.e58d00e9.91239374ba52c16c.js" type="text/javascript" crossorigin="anonymous"></script>
+<script src="stackly-header.js"></script>
+</body>
+</html>
+
+
+

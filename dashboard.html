@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Dashboard â€“ Stackly Biotech</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f4f4f5;
+  --card:#ffffff;
+  --border:#e4e4e7;
+  --border-active:#d4d4d8;
+  --text-main:#09090b;
+  --text-dim:#71717a;
+  --p-blue:#2563eb;
+  --p-teal:#0d9488;
+  --p-orange:#ea580c;
+  --p-purple:#7c3aed;
+  --p-rose:#e11d48;
+  --p-green:#16a34a;
+  --s-blue:#eff6ff;
+  --s-teal:#f0fdfa;
+  --s-orange:#fff7ed;
+  --s-purple:#f5f3ff;
+  --s-rose:#fff1f2;
+  --s-green:#f0fdf4;
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-main);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* â”€â”€â”€â”€â”€ LAYOUT â”€â”€â”€â”€â”€ */
+.dashboard-wrap{display:flex;height:100vh;padding:16px;gap:16px;overflow:hidden;position:relative}
+
+/* â”€â”€â”€â”€â”€ FLOATING SIDEBAR â”€â”€â”€â”€â”€ */
+.sidebar{
+  width:85px;background:var(--card);border-radius:var(--r);
+  border:1px solid var(--border);display:flex;flex-direction:column;
+  align-items:center;padding:24px 0;flex-shrink:0;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,0.05);z-index:500;
+  transition:left 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.sb-logo{
+  width:44px;height:44px;border-radius:12px;
+  background:#09090b;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800;font-size:22px;margin-bottom:28px;
+}
+.sb-nav{display:flex;flex-direction:column;gap:8px;width:100%;padding:0 16px}
+.sb-link{
+  width:100%;aspect-ratio:1;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-dim);text-decoration:none;transition:all .25s;
+  position:relative;
+}
+.sb-link svg{width:22px;height:22px;stroke-width:2;stroke:currentColor}
+.sb-link:hover{background:#f4f4f5;color:var(--text-main);transform:scale(1.05)}
+.sb-link.active{background:var(--text-main);color:#fff}
+.sb-badge{
+  position:absolute;top:-4px;right:-4px;background:var(--p-rose);color:#fff;
+  font:700 10px/1 'Plus Jakarta Sans',sans-serif;padding:3px 6px;border-radius:10px;
+  border:2px solid var(--card);
+}
+.sb-bottom{margin-top:auto}
+.sb-av{
+  width:44px;height:44px;border-radius:50%;overflow:hidden;
+  border:2px solid var(--border);cursor:pointer;transition:border-color .2s;
+}
+.sb-av:hover{border-color:var(--p-blue)}
+.sb-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+/* Sb overlay (mobile) */
+.sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499;opacity:0;transition:opacity .3s}
+
+/* â”€â”€â”€â”€â”€ MAIN AREA â”€â”€â”€â”€â”€ */
+.main{
+  flex:1;background:var(--card);border-radius:var(--r);
+  border:1px solid var(--border);box-shadow:0 10px 40px -15px rgba(0,0,0,0.06);
+  display:flex;flex-direction:column;overflow:hidden;min-width:0;
+}
+
+/* â”€â”€â”€â”€â”€ HEADER â”€â”€â”€â”€â”€ */
+.header{
+  height:76px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--border);flex-shrink:0;background:var(--card);z-index:40;
+}
+.mob-toggle{
+  display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--border);
+  background:#fff;align-items:center;justify-content:center;color:var(--text-main);cursor:pointer;
+  flex-shrink:0;
+}
+.mob-toggle svg{width:20px;height:20px;stroke-width:2;stroke:currentColor}
+.hd-left{display:flex;align-items:center;gap:16px}
+.hd-title-grp{display:flex;flex-direction:column}
+.hd-title-grp h1{font-weight:700;font-size:18px;letter-spacing:-0.5px;color:var(--text-main);margin-bottom:2px}
+.hd-title-grp p{font-weight:500;font-size:12px;color:var(--text-dim)}
+.hd-right{display:flex;align-items:center;gap:12px}
+.search-box{
+  display:flex;align-items:center;gap:10px;background:#f4f4f5;border-radius:12px;
+  padding:10px 16px;color:var(--text-dim);font-weight:500;font-size:13px;width:240px;
+  border:1px solid transparent;transition:border-color .2s;cursor:text;
+}
+.search-box:hover{border-color:var(--border-active)}
+.search-box svg{width:16px;height:16px;stroke:currentColor;stroke-width:2}
+.search-kbd{margin-left:auto;background:#fff;border:1px solid var(--border);padding:2px 6px;border-radius:6px;font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--text-main)}
+.btn-icon{
+  width:40px;height:40px;border-radius:12px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;cursor:pointer;color:var(--text-main);transition:all .2s;
+  position:relative;
+}
+.btn-icon:hover{background:#f4f4f5;border-color:var(--border-active)}
+.btn-icon svg{width:18px;height:18px;stroke-width:2}
+.btn-badge{position:absolute;top:-4px;right:-4px;width:8px;height:8px;background:var(--p-rose);border-radius:50%}
+
+/* â”€â”€â”€â”€â”€ SCROLLABLE CONTENT â”€â”€â”€â”€â”€ */
+.content{
+  flex:1;overflow-y:auto;overflow-x:hidden;
+  padding:24px 32px;
+  display:grid;grid-template-columns:repeat(12, 1fr);
+  grid-auto-rows:minmax(120px,auto);gap:16px;
+}
+.content::-webkit-scrollbar{width:6px}
+.content::-webkit-scrollbar-track{background:transparent}
+.content::-webkit-scrollbar-thumb{background:#d4d4d8;border-radius:10px}
+
+/* â”€â”€â”€â”€â”€ BENTO BLOCKS â”€â”€â”€â”€â”€ */
+.bento{
+  background:#fff;border-radius:var(--r);
+  border:1px solid var(--border);padding:24px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+  min-width:0;
+}
+
+/* Base headers for blocks */
+.b-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;z-index:2;position:relative}
+.b-title{font-size:15px;font-weight:700;letter-spacing:-0.3px}
+.b-link{font-size:13px;font-weight:600;color:var(--p-blue);text-decoration:none}
+.b-link:hover{text-decoration:underline}
+
+/* Hero (Span 8x2) */
+.block-hero{grid-column:span 8;grid-row:span 2;background:linear-gradient(135deg,#09090b,#18181b);color:#fff;justify-content:center;padding:32px;border:none}
+.hero-content{position:relative;z-index:2;max-width:500px}
+.hero-content h2{font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:10px;line-height:1.2}
+.hero-content h2 span{color:var(--p-teal)}
+.hero-content p{font-size:14px;color:#a1a1aa;line-height:1.5;margin-bottom:20px}
+.btn-primary{display:inline-flex;padding:10px 20px;border-radius:10px;background:#fff;color:#09090b;font-weight:700;font-size:13px;text-decoration:none;transition:transform .2s}
+.btn-primary:hover{transform:translateY(-2px)}
+.hero-deco{position:absolute;right:-20px;bottom:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 60%);border-radius:50%}
+.hero-deco2{position:absolute;right:180px;top:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(13,148,136,0.15),transparent 60%);border-radius:50%}
+
+/* KPI blocks (Span 3x1 each to equal 12 total, wait hero is 8x2. Need 4x1 next to hero x2 to fill row.
+Let's just place them explicitly or let them auto-flow.
+Hero spans 8 cols. Remaining 4 cols in top row -> let's put 2 KPIs stacked (4x1 each). */
+.block-kpi{grid-column:span 4;grid-row:span 1;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:24px}
+.kpi-left{display:flex;flex-direction:column}
+.kpi-val{font-size:36px;font-weight:800;font-family:'JetBrains Mono',monospace;letter-spacing:-1.5px;line-height:1}
+.kpi-title{font-size:13px;font-weight:600;color:var(--text-dim);margin-top:6px}
+.kpi-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.kpi-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.tag-up{color:var(--p-teal);background:var(--s-teal);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700}
+.tag-dn{color:var(--p-rose);background:var(--s-rose);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700}
+
+/* Chart (Span 8x3) */
+.block-chart{grid-column:span 8;grid-row:span 3}
+.chart-wrap{flex:1;position:relative;width:100%;height:100%;min-height:220px}
+
+/* Pipeline (Span 4x3) */
+.block-pipe{grid-column:span 4;grid-row:span 3}
+.pipe-list{display:flex;flex-direction:column;gap:12px;flex:1}
+.pipe-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;border:1px solid var(--border);background:#fff}
+.p-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.p-info{flex:1;min-width:0}
+.p-name{font-weight:700;font-size:14px;color:var(--text-main);margin-bottom:2px}
+.p-phase{font-weight:500;font-size:12px;color:var(--text-dim)}
+.p-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px}
+.b-green{background:var(--s-green);color:var(--p-green)}
+.b-blue{background:var(--s-blue);color:var(--p-blue)}
+.b-purple{background:var(--s-purple);color:var(--p-purple)}
+.b-orange{background:var(--s-orange);color:var(--p-orange)}
+
+/* Demographics Doughnut (Span 4x2) */
+.block-demo{grid-column:span 4;grid-row:span 2}
+.demo-wrap{flex:1;position:relative;display:flex;align-items:center;justify-content:center;min-height:160px}
+
+/* Equipment Status (Span 4x2) */
+.block-equip{grid-column:span 4;grid-row:span 2}
+.equip-list{display:flex;flex-direction:column;gap:10px;flex:1}
+.eq-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #f4f4f5}
+.eq-row:last-child{border:none;padding-bottom:0}
+.eq-left{display:flex;align-items:center;gap:12px}
+.eq-dot{width:8px;height:8px;border-radius:50%}
+.eq-name{font-weight:600;font-size:13px}
+.eq-val{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--text-dim)}
+
+/* Publications (Span 4x2) */
+.block-pubs{grid-column:span 4;grid-row:span 2}
+.pub-list{display:flex;flex-direction:column;gap:14px;flex:1}
+.pub-row{display:flex;gap:12px;align-items:flex-start}
+.pub-ico{width:32px;height:32px;border-radius:8px;background:#f4f4f5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pub-ico svg{width:16px;height:16px;stroke:var(--text-dim);stroke-width:2}
+.pub-info h4{font-weight:600;font-size:13px;line-height:1.4;margin-bottom:4px;color:var(--text-main)}
+.pub-info p{font-size:12px;color:var(--text-dim);font-weight:500}
+
+/* Table (Span 8x2) */
+.block-table{grid-column:span 8;grid-row:span 2}
+.tb-modern{width:100%;border-collapse:collapse}
+.tb-modern th{text-align:left;font-size:11px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.tb-modern td{padding:14px 0;border-bottom:1px solid #f4f4f5;vertical-align:middle;font-size:13px}
+.tb-modern tr:last-child td{border-bottom:none;padding-bottom:0}
+.td-strong{font-weight:700;color:var(--text-main)}
+.td-sub{font-weight:500;color:var(--text-dim);margin-top:2px;font-size:12px}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+
+/* Agenda (Span 4x2) */
+.block-agenda{grid-column:span 4;grid-row:span 2}
+.agenda-list{display:flex;flex-direction:column;flex:1}
+.ag-item{display:flex;gap:16px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #f4f4f5;position:relative}
+.ag-item:last-child{border:none;margin-bottom:0;padding-bottom:0}
+.ag-time{width:54px;flex-shrink:0;text-align:right;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;color:var(--text-main)}
+.ag-time span{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;color:var(--text-dim);margin-top:2px}
+.ag-dot{position:absolute;left:64px;top:4px;width:10px;height:10px;border-radius:50%;border:2px solid #fff}
+.ag-item::before{content:'';position:absolute;left:68px;top:14px;bottom:-16px;width:2px;background:#f4f4f5}
+.ag-item:last-child::before{display:none}
+.ag-content{margin-left:22px}
+.ag-title{font-weight:700;font-size:14px;color:var(--text-main);margin-bottom:2px}
+.ag-desc{font-weight:500;font-size:12px;color:var(--text-dim)}
+
+/* â”€â”€â”€â”€â”€ RESPONSIVE RULES â”€â”€â”€â”€â”€ */
+/* Tablet */
+@media(max-width:1300px){
+  .content{grid-template-columns:repeat(8, 1fr)}
+  .block-hero{grid-column:span 8}
+  .block-kpi{grid-column:span 4}
+  .block-chart{grid-column:span 8}
+  .block-pipe{grid-column:span 4;grid-row:span 2}
+  .block-demo{grid-column:span 4}
+  .block-equip{grid-column:span 4}
+  .block-table{grid-column:span 8}
+  .block-pubs{grid-column:span 4}
+  .block-agenda{grid-column:span 4}
+}
+/* Small Tablet */
+@media(max-width:992px){
+  .dashboard-wrap{padding:12px;gap:12px}
+  .sidebar{width:70px}
+  .header{padding:0 24px}
+  .content{padding:20px;gap:12px}
+}
+/* Mobile */
+@media(max-width:768px){
+  .dashboard-wrap{padding:0}
+  .main{border:none;border-radius:0;box-shadow:none}
+  .header{height:70px;padding:0 16px}
+  .search-box{display:none} 
+  
+  /* Mobile Sidebar Off-canvas */
+  .sidebar{
+     position:fixed;left:-100%;top:0;height:100%;z-index:999;
+     width:85px;border-radius:0;box-shadow:20px 0 40px rgba(0,0,0,0.15);
+  }
+  .sidebar.open{left:0}
+  .sb-overlay{display:block;pointer-events:none}
+  .sidebar.open ~ .main .sb-overlay{pointer-events:auto;opacity:1}
+  .mob-toggle{display:flex}
+  
+  .hd-title-grp p{display:none}
+  
+  .content{
+    display:grid;grid-template-columns:1fr;
+    padding:16px;gap:16px;
+  }
+  .bento{
+    grid-column:1 / -1 !important;
+    border-radius:16px;padding:20px;
+  }
+  .block-hero{padding:24px}
+  .hero-content h2{font-size:22px}
+  .kpi-val{font-size:28px}
+  
+  .tw-scroll{overflow-x:auto}
+  .tb-modern{min-width:500px}
+}
+.profile-chip {
+  display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 6px;
+  background: transparent; border-radius: 12px; cursor: pointer; border: 1px solid transparent; transition: all 0.2s; margin-left:8px;
+}
+.profile-chip:hover { background: #f4f4f5; border-color: var(--border-active); }
+.pc-icon {
+  width: 34px; height: 34px; border-radius: 8px; background: #e0e7ff; color: #4f46e5;
+  display: flex; align-items: center; justify-content: center;
+}
+.pc-icon svg { width: 18px; height: 18px; stroke-width: 2; }
+.pc-text { display: flex; flex-direction: column; text-align: left; }
+.pc-name { font-weight: 700; font-size: 13px; color: var(--text-main); line-height:1.2; }
+.pc-email { font-weight: 500; font-size: 11px; color: var(--text-dim); }
+.pc-chevron { width: 14px; height: 14px; color: var(--text-dim); margin-left: 4px; }
+</style>
+</head>
+<body>
+
+<div class="dashboard-wrap">
+  <!-- â•â•â• SIDEBAR â•â•â• -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-logo"><img src="images/whitelogo.webp" alt="Stackly" style="width:20px;height:20px;object-fit:contain"/></div>
+    <nav class="sb-nav">
+      <!-- 1. Clinical Dashboard -->
+      <a href="dashboard.html" class="sb-link active" title="Clinical Dashboard">
+        <svg fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2" ry="2"></rect><rect x="14" y="3" width="7" height="7" rx="2" ry="2"></rect><rect x="14" y="14" width="7" height="7" rx="2" ry="2"></rect><rect x="3" y="14" width="7" height="7" rx="2" ry="2"></rect></svg>
+      </a>
+      <!-- 2. System Admin -->
+      
+      <!-- 3. Analytics -->
+      <a href="404.html" class="sb-link" title="Analytics">
+        <svg fill="none" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+      </a>
+      <!-- 4. Notifications -->
+      <a href="404.html" class="sb-link" title="Alerts">
+        <span class="sb-badge">3</span>
+        <svg fill="none" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+      </a>
+      <!-- 5. Logout -->
+      <a href="index.html" class="sb-link" title="Logout">
+        <svg fill="none" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </nav>
+    <div class="sb-bottom">
+      <div class="sb-av"><img src="images/pexels-gustavo-fring-3984882.webp" alt="User"/></div>
+    </div>
+  </aside>
+
+  <!-- â•â•â• MAIN â•â•â• -->
+  <main class="main">
+    <div class="sb-overlay" id="overlay" onclick="toggleSb()"></div>
+    
+    <!-- HEADER -->
+    <header class="header">
+      <div class="hd-left">
+        <button class="mob-toggle" onclick="toggleSb()">
+          <svg fill="none" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+        <div class="hd-title-grp">
+          <h1>Research Control Center</h1>
+          <p>Biotech Division Â· Stackly HQ</p>
+        </div>
+      </div>
+      <div class="hd-right">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          Quick search...
+          
+        </div>
+        <button class="btn-icon">
+          <span class="btn-badge"></span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT / BENTO GRID -->
+    <div class="content">
+
+      <!-- HERO (8x2) -->
+      <div class="bento block-hero gsap-bento">
+        <div class="hero-deco"></div>
+        <div class="hero-deco2"></div>
+        <div class="hero-content">
+          <h2>FDA Fast-Track Approved for <span>STK-118</span> Trial.</h2>
+          <p>Phase III oncology trial outperformed synthetic benchmarks by 18%, accelerating our timeline to market clearance.</p>
+          <a href="404.html" class="btn-primary">View Briefing Documentation</a>
+        </div>
+      </div>
+
+      <!-- KPI 1 (4x1) -->
+      <div class="bento block-kpi gsap-bento">
+        <div class="kpi-left">
+          <div class="kpi-val"><span id="c1">0</span></div>
+          <div class="kpi-title">Active Projects</div>
+        </div>
+        <div class="kpi-right">
+          <div class="kpi-icon blue" style="background:var(--s-blue);color:var(--p-blue)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div>
+          <div class="tag-up">â†‘ 12%</div>
+        </div>
+      </div>
+
+      <!-- KPI 2 (4x1) -->
+      <div class="bento block-kpi gsap-bento">
+        <div class="kpi-left">
+          <div class="kpi-val"><span id="c2">0</span></div>
+          <div class="kpi-title">Trial Compounds</div>
+        </div>
+        <div class="kpi-right">
+          <div class="kpi-icon teal" style="background:var(--s-teal);color:var(--p-teal)"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v8l9-11h-7z"></path></svg></div>
+          <div class="tag-up">â†‘ 8%</div>
+        </div>
+      </div>
+
+      <!-- CHART LINE (8x3) -->
+      <div class="bento block-chart gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Synthetic Output vs Actuals</div>
+          <a href="404.html" class="b-link">Analysis â†’</a>
+        </div>
+        <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+      </div>
+
+      <!-- PIPELINE (4x3) -->
+      <div class="bento block-pipe gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Pipeline Progress</div>
+        </div>
+        <div class="pipe-list">
+          <div class="pipe-row">
+            <div class="p-icon b-green">ðŸ§¬</div>
+            <div class="p-info"><div class="p-name">STK-118</div><div class="p-phase">FDA Review</div></div>
+            <div class="p-badge b-green">91%</div>
+          </div>
+          <div class="pipe-row">
+            <div class="p-icon b-blue">ðŸ’Š</div>
+            <div class="p-info"><div class="p-name">STK-201</div><div class="p-phase">Phase II Trial</div></div>
+            <div class="p-badge b-blue">62%</div>
+          </div>
+          <div class="pipe-row">
+            <div class="p-icon b-purple">ðŸ”¬</div>
+            <div class="p-info"><div class="p-name">STK-712</div><div class="p-phase">Phase I Â· mRNA</div></div>
+            <div class="p-badge b-purple">53%</div>
+          </div>
+          <div class="pipe-row">
+            <div class="p-icon b-orange">ðŸ§ª</div>
+            <div class="p-info"><div class="p-name">STK-509</div><div class="p-phase">Pre-clinical</div></div>
+            <div class="p-badge b-orange">35%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EQUIP STATUS (4x2 NEW) -->
+      <div class="bento block-equip gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Lab Equipment</div>
+          <a href="404.html" class="b-link">Logs</a>
+        </div>
+        <div class="equip-list">
+          <div class="eq-row">
+            <div class="eq-left"><div class="eq-dot" style="background:var(--p-green)"></div><div class="eq-name">Sequencer A (Illumina)</div></div>
+            <div class="eq-val">ONLINE</div>
+          </div>
+          <div class="eq-row">
+            <div class="eq-left"><div class="eq-dot" style="background:var(--p-blue)"></div><div class="eq-name">Spectrometer 02</div></div>
+            <div class="eq-val">CALIBRATING</div>
+          </div>
+          <div class="eq-row">
+            <div class="eq-left"><div class="eq-dot" style="background:var(--p-rose)"></div><div class="eq-name">Centrifuge C-14</div></div>
+            <div class="eq-val" style="color:var(--p-rose)">OFFLINE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DONUT CHART (4x2 NEW) -->
+      <div class="bento block-demo gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Trial Demographics</div>
+        </div>
+        <div class="demo-wrap"><canvas id="donutChart"></canvas></div>
+      </div>
+
+      <!-- PUBLICATIONS (4x2 NEW) -->
+      <div class="bento block-pubs gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Recent Publications</div>
+          <a href="404.html" class="b-link">Archive</a>
+        </div>
+        <div class="pub-list">
+          <div class="pub-row">
+            <div class="pub-ico"><svg fill="none" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg></div>
+            <div class="pub-info">
+              <h4>CRISPR Target Efficiencies in Ex-Vivo Systems</h4>
+              <p>Nature Biotech Â· 2 days ago</p>
+            </div>
+          </div>
+          <div class="pub-row">
+            <div class="pub-ico"><svg fill="none" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"></path></svg></div>
+            <div class="pub-info">
+              <h4>mRNA Lipid Nanoparticles Optimization</h4>
+              <p>Cell Â· 5 days ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE (8x2) -->
+      <div class="bento block-table gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Program Registry</div>
+        </div>
+        <table class="tb-modern">
+          <thead>
+            <tr><th>Program Objective</th><th>Principal Investigator</th><th>Status Indicator</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="td-strong">Genomic Sequencing v3.2</div><div class="td-sub">Phase III Â· Genetic Profiling</div></td>
+              <td><div class="td-strong">Dr. E. Vasquez</div></td>
+              <td><span class="status-dot" style="background:var(--p-green)"></span> <span class="td-strong">Active Phase</span></td>
+            </tr>
+            <tr>
+              <td><div class="td-strong">STK-201 Oncology Optimization</div><div class="td-sub">Phase II Â· Colorectal</div></td>
+              <td><div class="td-strong">Dr. M. Okafor</div></td>
+              <td><span class="status-dot" style="background:var(--p-green)"></span> <span class="td-strong">Active Phase</span></td>
+            </tr>
+            <tr>
+              <td><div class="td-strong">Precision Neurology Markers</div><div class="td-sub">Pre-clinical Â· Neural Mapping</div></td>
+              <td><div class="td-strong">Dr. J. Hartley</div></td>
+              <td><span class="status-dot" style="background:var(--p-orange)"></span> <span class="td-strong" style="color:var(--text-dim)">Under Review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- AGENDA (4x2) -->
+      <div class="bento block-agenda gsap-bento">
+        <div class="b-head">
+          <div class="b-title">Today's Agenda</div>
+        </div>
+        <div class="agenda-list" style="padding-top:8px">
+          <div class="ag-item">
+            <div class="ag-time">09:00<span>AM</span></div>
+            <div class="ag-dot" style="background:var(--p-blue)"></div>
+            <div class="ag-content"><div class="ag-title">Clinical Review Sync</div><div class="ag-desc">Regulatory audit team</div></div>
+          </div>
+          <div class="ag-item">
+            <div class="ag-time">11:30<span>AM</span></div>
+            <div class="ag-dot" style="background:var(--p-teal)"></div>
+            <div class="ag-content"><div class="ag-title">Lab Inspection Tour</div><div class="ag-desc">ISO compliance checks</div></div>
+          </div>
+          <div class="ag-item">
+            <div class="ag-time">02:00<span>PM</span></div>
+            <div class="ag-dot" style="background:var(--text-main)"></div>
+            <div class="ag-content"><div class="ag-title">Executive Board Brief</div><div class="ag-desc">Q1 pipeline presentation</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </main>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+// Sidebar Toggle
+function toggleSb() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// GSAP Bento Entrance Stagger
+gsap.from('.dashboard-wrap', {opacity: 0, duration: 0.5});
+gsap.from('.gsap-bento', {
+  y: 40, opacity: 0,
+  duration: 0.85,
+  ease: 'power3.out',
+  stagger: 0.05,
+  delay: 0.1
+});
+gsap.from('.sidebar', {x:-40, opacity: 0, duration: 0.8, ease:'power3.out'});
+
+// GSAP Counters
+const vals = [{id:'c1',n:42}, {id:'c2',n:68}];
+vals.forEach(k => {
+  const el = document.getElementById(k.id);
+  if(el) {
+    gsap.to({val:0}, {
+      val: k.n, duration: 2.2, ease: 'power3.out', delay: 0.3,
+      onUpdate: function() { el.innerHTML = Math.floor(this.targets()[0].val); }
+    });
+  }
+});
+
+Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+Chart.defaults.color = "#71717a";
+
+// Line Chart
+(function(){
+  const ctx = document.getElementById('lineChart');
+  if(!ctx) return;
+  new Chart(ctx.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'],
+      datasets: [
+        {
+          label: 'Prediction',
+          data: [30, 25, 40, 35, 50, 40, 65, 55, 80, 60, 45],
+          borderColor: '#e4e4e7',
+          borderWidth: 3,
+          borderDash: [6, 6],
+          tension: 0.4,
+          pointRadius: 0,
+          pointHoverRadius: 0
+        },
+        {
+          label: 'Success Rate',
+          data: [20, 35, 30, 50, 45, 60, 55, 75, 70, 90, 85],
+          borderColor: '#09090b',
+          borderWidth: 3,
+          tension: 0.4,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: '#09090b',
+          pointBorderWidth: 3,
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      animation: { duration: 1500, easing: 'easeOutQuart' },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#09090b',
+          titleFont: { size: 14, weight: '700' },
+          bodyFont: { size: 14, weight: '500' },
+          padding: 12, cornerRadius: 10
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { weight: '600' } } },
+        y: { grid: { color: '#f4f4f5', drawBorder: false }, border: { display: false } }
+      }
+    }
+  });
+})();
+
+// Doughnut Chart
+(function(){
+  const ctx = document.getElementById('donutChart');
+  if(!ctx) return;
+  new Chart(ctx.getContext('2d'), {
+    type: 'doughnut',
+    data: {
+      labels: ['North America', 'Europe', 'Asia-Pac', 'LatAm'],
+      datasets: [{
+        data: [45, 25, 20, 10],
+        backgroundColor: ['#0d9488', '#2563eb', '#7c3aed', '#ea580c'],
+        borderWidth: 0,
+        hoverOffset: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      cutout: '70%',
+      plugins: {
+        legend: { position: 'right', labels: { usePointStyle: true, boxWidth: 8, font: {size: 11, weight:'600'} } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>
