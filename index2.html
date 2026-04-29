@@ -166,8 +166,8 @@
                         <svg class="dropdown-caret" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto; transition: transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </a>
                     <ul class="dropdown-menu expanded" id="home-dropdown-menu">
-                        <li class="active"><a href="index.html">Home 1</a></li>
-                        <li><a href="index2.html">Home 2</a></li>
+                        <li><a href="index.html">Home 1</a></li>
+                        <li class="active"><a href="index2.html">Home 2</a></li>
                     </ul>
                 </li>
                 <li><a href="trending.html">
@@ -243,41 +243,58 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="hero-left">
-                    <h1 class="hero-headline">Experience Video Like <span>Never Before</span></h1>
-                    <p class="hero-subheadline">Dive into a universe of highly aesthetic, premium content tailored
-                        exactly to your taste. Elevate your viewing experience with our next-gen platform.</p>
-                    <button class="slice" onclick="window.location.href='404.html'">
-                        <span class="text">Play Video</span>
-                    </button>
+            <!-- Modern Hero Section -->
+            <section class="hero-section-modern gs-reveal">
+                <div class="hero-modern-content">
+                    <div class="badge-modern">✨ Welcome to Stackly 2.0</div>
+                    <h1 class="hero-headline-modern">Next-Level <span>Creators</span></h1>
+                    <p class="hero-subheadline-modern">Unlock exclusive content, engage with top-tier creators, and experience visual storytelling like never before in our newly designed space.</p>
+                    <div class="hero-modern-actions">
+                        <button class="slice" onclick="window.location.href='404.html'">
+                            <span class="text">Start Watching</span>
+                        </button>
+                        <button class="btn-outline" onclick="window.location.href='404.html'">
+                            <span class="text">Explore Creators</span>
+                        </button>
+                    </div>
                 </div>
-
-                <div class="hero-right">
-                    <!-- 3D YouTube Play button embedded directly -->
-                    <div class="scene">
-                        <div class="red-black-button" aria-label="Play 3D Button Animation">
-                            <div class="layer back" style="--z: -12px">
-                                <div class="neon-ring"></div>
-                                <div class="play-icon-back"></div>
+                <div class="hero-modern-visuals">
+                    <div class="glass-orb orb-1"></div>
+                    <div class="glass-orb orb-2"></div>
+                    <div class="modern-slider-card" id="hero-slider">
+                        <div class="slider-track">
+                            <div class="slide active">
+                                <a href="404.html" style="display:block;"><div class="slide-video-thumb" style="background-image: url('images/pexels-a-darmel-9040607.webp');"></div></a>
+                                <div class="slide-info">
+                                    <span class="trending-badge">#1 Trending</span>
+                                    <h4>Cinematic Tokyo Vlog</h4>
+                                    <p>@Wanderlust • 2.4M Subs</p>
+                                </div>
                             </div>
-                            <div class="layer middle" style="--z: -10px"></div>
-                            <div class="layer middle" style="--z: -8px"></div>
-                            <div class="layer middle" style="--z: -6px"></div>
-                            <div class="layer middle" style="--z: -4px"></div>
-                            <div class="layer middle" style="--z: -2px"></div>
-                            <div class="layer middle" style="--z: 0px"></div>
-                            <div class="layer middle" style="--z: 2px"></div>
-                            <div class="layer middle" style="--z: 4px"></div>
-                            <div class="layer middle" style="--z: 6px"></div>
-                            <div class="layer middle" style="--z: 8px"></div>
-                            <div class="layer front" style="--z: 10px">
-                                <div class="neon-ring"></div>
-                                <div class="play-icon"></div>
+                            <div class="slide">
+                                <a href="404.html" style="display:block;"><div class="slide-video-thumb" style="background-image: url('images/pexels-benjamin-dominguez-3363409-28332700.webp');"></div></a>
+                                <div class="slide-info">
+                                    <span class="trending-badge">Featured</span>
+                                    <h4>Cyberpunk 3D City</h4>
+                                    <p>@DesignPro • 1.2M Subs</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <a href="404.html" style="display:block;"><div class="slide-video-thumb" style="background-image: url('images/pexels-benjamin-dominguez-3363409-28336275.webp');"></div></a>
+                                <div class="slide-info">
+                                    <span class="trending-badge">New</span>
+                                    <h4>Advanced CSS Guide</h4>
+                                    <p>@CodeMaster • 450K Subs</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="shadow"></div>
+                        <div class="slider-nav">
+                            <div class="slider-dots"></div>
+                            <div class="slider-arrows">
+                                <button class="arrow-btn prev" aria-label="Previous Slide">←</button>
+                                <button class="arrow-btn next" aria-label="Next Slide">→</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -289,220 +306,269 @@
                 <!-- Video Cards will be completely populated by main.js automatically -->
             </section>
 
+          
 
-       
-
-            <!-- ===== SECTION 3: WATCH CATEGORIES ===== -->
-            <section class="categories-section">
+            <!-- ===== SECTION 2: TOP PICKS CINEMATIC SPOTLIGHT ===== -->
+            <section class="spotlight-section">
                 <div class="section-header-premium">
-                    <div class="section-label-tag">DISCOVER</div>
-                    <h2 class="section-heading-xl">Browse by <span>Category</span></h2>
-                    <p class="section-desc">Find content that speaks to your vibe — from epic travel to niche art</p>
+                    <div class="section-label-tag" style="--tag-c: #f59e0b">EDITOR'S PICK</div>
+                    <h2 class="section-heading-xl">Cinematic <span style="background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text">Spotlight</span></h2>
+                    <p class="section-desc">Handcurated masterpieces selected by our editorial team this week</p>
                 </div>
-                <div class="categories-mosaic">
-                    <a href="404.html" class="cat-tile cat-wide" style="--cat-img: url('images/pexels-a-darmel-9040607.webp'); --cat-color: #ff1a1a">
-                        <div class="cat-overlay"></div>
-                        <div class="cat-content">
-                            <div class="cat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-                            <h3>Travel & Vlog</h3>
-                            <p>3.2M videos</p>
+                <div class="spotlight-scroll-wrapper">
+                    <div class="spotlight-track">
+                        <div class="spotlight-card">
+                            <div class="spotlight-thumb" style="background-image: url('images/pexels-a-darmel-9040607.webp')">
+                                <div class="spotlight-play-btn" onclick="window.location.href='404.html'">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                </div>
+                                <div class="spotlight-duration">18:42</div>
+                                <div class="spotlight-quality">4K</div>
+                            </div>
+                            <div class="spotlight-info">
+                                <div class="spotlight-meta-top">
+                                    <span class="spotlight-cat" style="--scat-c: #ff1a1a">Travel</span>
+                                    <span class="spotlight-views">2.1M views</span>
+                                </div>
+                                <h4 class="spotlight-title">Neon Tokyo at Midnight</h4>
+                                <div class="spotlight-author">
+                                    <img src="images/c3.webp" alt="Author" class="spotlight-author-avatar">
+                                    <div>
+                                        <span class="spotlight-author-name">@wanderlust_lens</span>
+                                        <span class="spotlight-author-subs">2.4M subscribers</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cat-count-badge">🔥 Trending</div>
-                    </a>
-                    <a href="404.html" class="cat-tile" style="--cat-img: url('images/pexels-benjamin-dominguez-3363409-28332700.webp'); --cat-color: #a855f7">
-                        <div class="cat-overlay"></div>
-                        <div class="cat-content">
-                            <div class="cat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                            <h3>3D & Design</h3>
-                            <p>1.8M videos</p>
+                        <div class="spotlight-card">
+                            <div class="spotlight-thumb" style="background-image: url('images/pexels-benjamin-dominguez-3363409-28332700.webp')">
+                                <div class="spotlight-play-btn" onclick="window.location.href='404.html'">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                </div>
+                                <div class="spotlight-duration">24:15</div>
+                                <div class="spotlight-quality">HDR</div>
+                            </div>
+                            <div class="spotlight-info">
+                                <div class="spotlight-meta-top">
+                                    <span class="spotlight-cat" style="--scat-c: #a855f7">3D Art</span>
+                                    <span class="spotlight-views">1.8M views</span>
+                                </div>
+                                <h4 class="spotlight-title">Cyberpunk City Timelapse</h4>
+                                <div class="spotlight-author">
+                                    <img src="images/pexels-fotios-photos-1266302.webp" alt="Author" class="spotlight-author-avatar">
+                                    <div>
+                                        <span class="spotlight-author-name">@design_pro</span>
+                                        <span class="spotlight-author-subs">1.2M subscribers</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="404.html" class="cat-tile" style="--cat-img: url('images/pexels-shvetsa-12673813.webp'); --cat-color: #22d3ee">
-                        <div class="cat-overlay"></div>
-                        <div class="cat-content">
-                            <div class="cat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                            <h3>Tech & Science</h3>
-                            <p>2.1M videos</p>
+                        <div class="spotlight-card">
+                            <div class="spotlight-thumb" style="background-image: url('images/pexels-benjamin-dominguez-3363409-28336275.webp')">
+                                <div class="spotlight-play-btn" onclick="window.location.href='404.html'">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                </div>
+                                <div class="spotlight-duration">11:30</div>
+                                <div class="spotlight-quality">HD</div>
+                            </div>
+                            <div class="spotlight-info">
+                                <div class="spotlight-meta-top">
+                                    <span class="spotlight-cat" style="--scat-c: #22d3ee">Tech</span>
+                                    <span class="spotlight-views">940K views</span>
+                                </div>
+                                <h4 class="spotlight-title">Future of AI Design</h4>
+                                <div class="spotlight-author">
+                                    <img src="images/pexels-ivan-s-8117815.webp" alt="Author" class="spotlight-author-avatar">
+                                    <div>
+                                        <span class="spotlight-author-name">@code_master</span>
+                                        <span class="spotlight-author-subs">450K subscribers</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cat-count-badge" style="background: rgba(34,211,238,0.2); color:#22d3ee">⚡ New Drops</div>
-                    </a>
-                    <a href="404.html" class="cat-tile cat-tall" style="--cat-img: url('images/pexels-gustavo-fring-8770481.webp'); --cat-color: #f59e0b">
-                        <div class="cat-overlay"></div>
-                        <div class="cat-content">
-                            <div class="cat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-                            <h3>Music</h3>
-                            <p>4.5M videos</p>
+                        <div class="spotlight-card">
+                            <div class="spotlight-thumb" style="background-image: url('images/pexels-gustavo-fring-8770481.webp')">
+                                <div class="spotlight-play-btn" onclick="window.location.href='404.html'">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                </div>
+                                <div class="spotlight-duration">32:08</div>
+                                <div class="spotlight-quality">4K</div>
+                            </div>
+                            <div class="spotlight-info">
+                                <div class="spotlight-meta-top">
+                                    <span class="spotlight-cat" style="--scat-c: #f59e0b">Music</span>
+                                    <span class="spotlight-views">3.5M views</span>
+                                </div>
+                                <h4 class="spotlight-title">Lo-Fi Beats Session Vol. 9</h4>
+                                <div class="spotlight-author">
+                                    <img src="images/pexels-kamaji-ogino-5065197.webp" alt="Author" class="spotlight-author-avatar">
+                                    <div>
+                                        <span class="spotlight-author-name">@zara_beats</span>
+                                        <span class="spotlight-author-subs">890K subscribers</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="404.html" class="cat-tile" style="--cat-img: url('images/pexels-mizunokozuki-13929968.webp'); --cat-color: #10b981">
-                        <div class="cat-overlay"></div>
-                        <div class="cat-content">
-                            <div class="cat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-                            <h3>Lifestyle</h3>
-                            <p>990K videos</p>
-                        </div>
-                    </a>
-                    <a href="404.html" class="cat-tile" style="--cat-img: url('images/pexels-solliefoto-320617.webp'); --cat-color: #ec4899">
-                        <div class="cat-overlay"></div>
-                        <div class="cat-content">
-                            <div class="cat-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-                            <h3>Education</h3>
-                            <p>1.4M videos</p>
-                        </div>
-                    </a>
+                    </div>
+                    <div class="spotlight-scroll-btns">
+                        <button class="sscroll-btn" id="spotlight-prev" aria-label="Scroll Left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button class="sscroll-btn" id="spotlight-next" aria-label="Scroll Right">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                    </div>
                 </div>
             </section>
 
-     <!-- ===== SECTION 2: FEATURED CREATORS SHOWCASE ===== -->
-            <section class="creators-showcase-section">
+            <!-- ===== SECTION 3: JOIN STACKLY IMMERSIVE CTA ===== -->
+            <section class="join-cta-section">
+                <div class="join-cta-mesh"></div>
+                <div class="join-cta-particles">
+                    <div class="jcp jcp-1"></div>
+                    <div class="jcp jcp-2"></div>
+                    <div class="jcp jcp-3"></div>
+                    <div class="jcp jcp-4"></div>
+                    <div class="jcp jcp-5"></div>
+                </div>
+                <div class="join-cta-content">
+                    <div class="join-cta-badge">
+                        <span class="live-dot" style="background:#f59e0b; box-shadow: 0 0 8px #f59e0b"></span>
+                        LIMITED OFFER — 30 DAYS FREE
+                    </div>
+                    <h2 class="join-cta-headline">Join <span>10 Million</span><br>Viewers Today</h2>
+                    <p class="join-cta-sub">Start your premium journey with zero commitment. Cancel anytime. No credit card needed.</p>
+                    <div class="join-cta-perks">
+                        <div class="jcp-perk">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Ad-free experience
+                        </div>
+                        <div class="jcp-perk">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Exclusive creator content
+                        </div>
+                        <div class="jcp-perk">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            4K Ultra HDR streaming
+                        </div>
+                        <div class="jcp-perk">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Offline downloads
+                        </div>
+                    </div>
+                    <div class="join-cta-actions">
+                        <button class="join-cta-primary" onclick="window.location.href='signup.html'">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            Start Free Trial
+                        </button>
+                        <button class="join-cta-secondary" onclick="window.location.href='services.html'">View Plans</button>
+                    </div>
+                    <p class="join-cta-fine">✦ No credit card required &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; Available in 120+ countries</p>
+                </div>
+                <div class="join-cta-visuals">
+                    <div class="jcv-phone">
+                        <div class="jcv-screen">
+                            <div class="jcv-play-anim"></div>
+                            <div class="jcv-waveform">
+                                <div class="wave-bar" style="--h:40%"></div>
+                                <div class="wave-bar" style="--h:80%"></div>
+                                <div class="wave-bar" style="--h:55%"></div>
+                                <div class="wave-bar" style="--h:90%"></div>
+                                <div class="wave-bar" style="--h:30%"></div>
+                                <div class="wave-bar" style="--h:70%"></div>
+                                <div class="wave-bar" style="--h:50%"></div>
+                                <div class="wave-bar" style="--h:85%"></div>
+                                <div class="wave-bar" style="--h:60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jcv-stat-float jcv-stat-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <span>Ultra-fast CDN</span>
+                    </div>
+                    <div class="jcv-stat-float jcv-stat-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>100% Secure</span>
+                    </div>
+                </div>
+            </section>
+
+              <!-- ===== SECTION 1: PLATFORM FEATURES BENTO GRID ===== -->
+            <section class="features-bento-section">
                 <div class="section-header-premium">
-                    <div class="section-label-tag">COMMUNITY</div>
-                    <h2 class="section-heading-xl">Top Creators <span>This Week</span></h2>
-                    <p class="section-desc">Handpicked creators pushing boundaries every single day</p>
+                    <div class="section-label-tag" style="--tag-c: #a855f7">PLATFORM</div>
+                    <h2 class="section-heading-xl">Why <span style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text">Stackly?</span></h2>
+                    <p class="section-desc">Built from the ground up for the next generation of video streaming</p>
                 </div>
-                <div class="creators-grid">
-                    <div class="creator-card-premium">
-                        <div class="creator-card-bg" style="--creator-color: #ff1a1a"></div>
-                        <div class="creator-rank">01</div>
-                        <div class="creator-avatar-wrap">
-                            <img src="images/pexels-fotios-photos-1266302.webp" alt="Creator Alex" class="creator-avatar">
-                            <div class="creator-status-ring"></div>
-                            <div class="creator-live-indicator">LIVE</div>
+                <div class="bento-grid">
+                    <!-- Large Feature Card -->
+                    <div class="bento-card bento-large" id="bento-main">
+                        <div class="bento-glow" style="--glow-c: #a855f7"></div>
+                        <div class="bento-icon-large">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
-                        <div class="creator-info">
-                            <h3 class="creator-name">Alex Visuals</h3>
-                            <p class="creator-niche">Cinematic Travel</p>
-                            <div class="creator-stats-row">
-                                <span class="cstat">2.4M <em>subs</em></span>
-                                <span class="cstat">98K <em>views</em></span>
-                            </div>
+                        <h3 class="bento-title">100% Ad-Free Streaming</h3>
+                        <p class="bento-desc">No interruptions. No distractions. Pure cinematic content served exactly the way creators intended it.</p>
+                        <div class="bento-tag-row">
+                            <span class="bento-tag">Premium</span>
+                            <span class="bento-tag">Exclusive</span>
                         </div>
-                        <button class="creator-follow-btn" onclick="window.location.href='404.html'">Follow</button>
+                        <div class="bento-corner-deco"></div>
                     </div>
-                    <div class="creator-card-premium">
-                        <div class="creator-card-bg" style="--creator-color: #a855f7"></div>
-                        <div class="creator-rank">02</div>
-                        <div class="creator-avatar-wrap">
-                            <img src="images/pexels-ivan-s-8117815.webp" alt="Creator Maya" class="creator-avatar">
-                            <div class="creator-status-ring" style="--ring-c: #a855f7"></div>
+                    <!-- Medium Card -->
+                    <div class="bento-card bento-medium" id="bento-hdr">
+                        <div class="bento-glow" style="--glow-c: #22d3ee"></div>
+                        <div class="bento-icon-med">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                         </div>
-                        <div class="creator-info">
-                            <h3 class="creator-name">Maya Designs</h3>
-                            <p class="creator-niche">3D & Motion Art</p>
-                            <div class="creator-stats-row">
-                                <span class="cstat">1.8M <em>subs</em></span>
-                                <span class="cstat">74K <em>views</em></span>
-                            </div>
+                        <h3 class="bento-title">4K Ultra HDR</h3>
+                        <p class="bento-desc">Crystal-clear visuals at 60fps with Dolby Vision support across all devices.</p>
+                        <div class="bento-visual-bar">
+                            <div class="bv-fill" style="width:95%; --bv-c: #22d3ee"></div>
                         </div>
-                        <button class="creator-follow-btn" style="--btn-c: #a855f7" onclick="window.location.href='404.html'">Follow</button>
+                        <div class="bento-corner-deco" style="--deco-c: #22d3ee"></div>
                     </div>
-                    <div class="creator-card-premium">
-                        <div class="creator-card-bg" style="--creator-color: #22d3ee"></div>
-                        <div class="creator-rank">03</div>
-                        <div class="creator-avatar-wrap">
-                            <img src="images/pexels-kamaji-ogino-5065197.webp" alt="Creator James" class="creator-avatar">
-                            <div class="creator-status-ring" style="--ring-c: #22d3ee"></div>
+                    <!-- Small Card -->
+                    <div class="bento-card bento-small" id="bento-speed">
+                        <div class="bento-glow" style="--glow-c: #f59e0b"></div>
+                        <div class="bento-icon-med">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         </div>
-                        <div class="creator-info">
-                            <h3 class="creator-name">James Code</h3>
-                            <p class="creator-niche">Tech & Future</p>
-                            <div class="creator-stats-row">
-                                <span class="cstat">1.1M <em>subs</em></span>
-                                <span class="cstat">52K <em>views</em></span>
-                            </div>
-                        </div>
-                        <button class="creator-follow-btn" style="--btn-c: #22d3ee" onclick="window.location.href='404.html'">Follow</button>
+                        <h3 class="bento-title">Lightning Fast</h3>
+                        <p class="bento-desc">Sub-second load times with our global CDN network.</p>
+                        <div class="bento-corner-deco" style="--deco-c: #f59e0b"></div>
                     </div>
-                    <div class="creator-card-premium">
-                        <div class="creator-card-bg" style="--creator-color: #f59e0b"></div>
-                        <div class="creator-rank">04</div>
-                        <div class="creator-avatar-wrap">
-                            <img src="images/pexels-ron-lach-8368744.webp" alt="Creator Zara" class="creator-avatar">
-                            <div class="creator-status-ring" style="--ring-c: #f59e0b"></div>
+                    <!-- Small Card -->
+                    <div class="bento-card bento-small" id="bento-ai">
+                        <div class="bento-glow" style="--glow-c: #10b981"></div>
+                        <div class="bento-icon-med">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
                         </div>
-                        <div class="creator-info">
-                            <h3 class="creator-name">Zara Beats</h3>
-                            <p class="creator-niche">Music Production</p>
-                            <div class="creator-stats-row">
-                                <span class="cstat">890K <em>subs</em></span>
-                                <span class="cstat">41K <em>views</em></span>
+                        <h3 class="bento-title">AI Recommendations</h3>
+                        <p class="bento-desc">Smart engine learns your taste and curates a perfect feed.</p>
+                        <div class="bento-corner-deco" style="--deco-c: #10b981"></div>
+                    </div>
+                    <!-- Wide Card -->
+                    <div class="bento-card bento-wide" id="bento-social">
+                        <div class="bento-glow" style="--glow-c: #ec4899"></div>
+                        <div class="bento-split">
+                            <div>
+                                <div class="bento-icon-med">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                                </div>
+                                <h3 class="bento-title">Community Rooms</h3>
+                                <p class="bento-desc">Watch together in real-time with synchronized playback and live chat.</p>
+                            </div>
+                            <div class="bento-stat-display">
+                                <div class="bsd-item"><span class="bsd-num">50K</span><span class="bsd-lab">Live Rooms</span></div>
+                                <div class="bsd-divider"></div>
+                                <div class="bsd-item"><span class="bsd-num">2M</span><span class="bsd-lab">Daily Users</span></div>
                             </div>
                         </div>
-                        <button class="creator-follow-btn" style="--btn-c: #f59e0b" onclick="window.location.href='404.html'">Follow</button>
+                        <div class="bento-corner-deco" style="--deco-c: #ec4899"></div>
                     </div>
                 </div>
             </section>
-
-            
-            <!-- ===== SECTION 1: LIVE PLATFORM STATS TICKER ===== -->
-            <section class="stats-ticker-section">
-                <div class="stats-ticker-header">
-                    <span class="live-badge"><span class="live-dot"></span>LIVE</span>
-                    <h2 class="stats-ticker-title">Platform Pulse</h2>
-                    <p class="stats-ticker-sub">Real-time activity across Stackly</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-orb-card" data-value="12.4M">
-                        <div class="stat-orb-ring"></div>
-                        <div class="stat-orb-inner">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.914V15.086a1 1 0 01-1.447.893L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-                        </div>
-                        <div class="stat-orb-data">
-                            <span class="stat-count" data-target="12400000">12.4M</span>
-                            <span class="stat-label">Videos Watched Today</span>
-                        </div>
-                        <div class="stat-spark spark-1"></div>
-                    </div>
-                    <div class="stat-orb-card" data-value="5.2M">
-                        <div class="stat-orb-ring" style="--ring-color: #a855f7"></div>
-                        <div class="stat-orb-inner" style="--orb-color: #a855f7">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                        </div>
-                        <div class="stat-orb-data">
-                            <span class="stat-count">5.2M</span>
-                            <span class="stat-label">Active Creators</span>
-                        </div>
-                        <div class="stat-spark spark-2"></div>
-                    </div>
-                    <div class="stat-orb-card" data-value="98.7">
-                        <div class="stat-orb-ring" style="--ring-color: #22d3ee"></div>
-                        <div class="stat-orb-inner" style="--orb-color: #22d3ee">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                        </div>
-                        <div class="stat-orb-data">
-                            <span class="stat-count">98.7%</span>
-                            <span class="stat-label">Uptime This Month</span>
-                        </div>
-                        <div class="stat-spark spark-3"></div>
-                    </div>
-                    <div class="stat-orb-card" data-value="120">
-                        <div class="stat-orb-ring" style="--ring-color: #f59e0b"></div>
-                        <div class="stat-orb-inner" style="--orb-color: #f59e0b">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                        </div>
-                        <div class="stat-orb-data">
-                            <span class="stat-count">120+</span>
-                            <span class="stat-label">Countries Reached</span>
-                        </div>
-                        <div class="stat-spark spark-4"></div>
-                    </div>
-                </div>
-                <div class="ticker-marquee">
-                    <div class="ticker-track">
-                        <span>🔥 Tokyo Night Walk is trending</span>
-                        <span>⚡ 1.2M concurrent viewers right now</span>
-                        <span>🎬 New: 4K Ultra HDR streaming live</span>
-                        <span>🚀 Stackly just hit 100M uploads</span>
-                        <span>🎵 Lo-fi Beats channel crossed 2M subs</span>
-                        <span>✨ Exclusive premieres every Friday</span>
-                        <span>🔥 Tokyo Night Walk is trending</span>
-                        <span>⚡ 1.2M concurrent viewers right now</span>
-                        <span>🎬 New: 4K Ultra HDR streaming live</span>
-                        <span>🚀 Stackly just hit 100M uploads</span>
-                    </div>
-                </div>
-            </section>
-            
 
         </main>
     </div>
