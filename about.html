@@ -154,8 +154,29 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100vw; position: relati
 @keyframes kParticle{0%{transform:translateY(100vh) scale(0);}10%{opacity:1}90%{opacity:.5}100%{transform:translateY(-10vh) scale(1);}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Biotech Preloader Assets -->
+<link rel="stylesheet" href="preloader.css">
+<script src="preloader.js" defer></script>
 </head>
 <body>
+    <!-- Biotech Preloader -->
+    <div id="rt-preloader">
+        <div class="biotech-loader-container">
+            <div class="loader-ring"></div>
+            <div class="biotech-icons">
+                <div class="tube">
+                    <div class="tube-liquid"></div>
+                </div>
+                <div class="pipette">
+                    <div class="drop"></div>
+                </div>
+                <div class="tube">
+                    <div class="tube-liquid" style="animation-delay: -1s;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader-text">Analyzing Bio-Data...</div>
+    </div>
 
 <!-- â•â•â• HEADER (COPIED FROM INDEX.HTML) â•â•â• -->
             <!-- === NEW MODERN HEADER === -->
@@ -409,6 +430,7 @@ document.querySelectorAll('.count-up').forEach(el=>cio.observe(el));
 <script src="stackly-header.js"></script>
 </body>
 </html>
+
 
 
 
