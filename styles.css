@@ -272,6 +272,12 @@
     padding-left: 0 !important;
 }
 
+@media (min-width: 992px) {
+    .rt-hero-left-bottom-v3 {
+        display: none !important;
+    }
+}
+
 
 
 
@@ -462,3 +468,34 @@
   .mf-grid { grid-template-columns: 1fr; }
   .mf-bottom { flex-direction: column; gap: 16px; text-align: center; }
 }
+
+/* --- ADJUSTMENTS FOR HEADING SIZE AND SPACING --- */
+
+/* Reduce banner heading size */
+.rt-text-style-h3 {
+    font-size: 1.85rem !important; /* Reduced from 2.125rem */
+    line-height: 1.3 !important;
+}
+
+/* Reduce hero big text size */
+.rt-bigtext-font-style {
+    font-size: clamp(35px, 10vw, 100px) !important; /* Reduced from max 170px */
+}
+
+/* Add spacing after the banner section */
+.rt-expertise {
+    margin-bottom: 100px !important;
+}
+
+@media (max-width: 991px) {
+    .rt-text-style-h3 {
+        font-size: 1.6rem !important;
+    }
+    .rt-bigtext-font-style {
+        font-size: clamp(30px, 12vw, 80px) !important;
+    }
+    .rt-expertise {
+        margin-bottom: 60px !important;
+    }
+}
+

@@ -1,26 +1,38 @@
 const fs = require('fs');
 const path = require('path');
-const dir = 'd:\\new themes\\youtube';
-const files = ['index2.html', 'blog.html', 'trending.html'];
 
-const geminiImages = [
-    'images/pexels-a-darmel-9040607.webp',
-    'images/pexels-benjamin-dominguez-3363409-28332700.webp',
-    'images/pexels-benjamin-dominguez-3363409-28336275.webp',
-    'images/pexels-fotios-photos-1266302.webp'
-];
+const imagesDir = 'images';
 
-files.forEach(f => {
-    let content = fs.readFileSync(path.join(dir, f), 'utf8');
+const stockImages = fs.readdirSync(imagesDir)
+    .filter(img => img.startsWith('pexels-') && img.endsWith('.webp'))
+    .map(img => `images/${img}`)
+    .sort();
+
+// Find all HTML files in the current directory
+const files = fs.readdirSync('.').filter(file => file.endsWith('.html'));
+
+files.forEach(htmlPath => {
+    let content = fs.readFileSync(htmlPath, 'utf8');
+
+    // Replace the hero BANNER
+    content = content.replace(
+        /https:\/\/cdn\.prod\.website-files\.com\/[^\s"'<>]+?_BANNER\.avif/g,
+        'images/hero 1.webp'
+    );
+
     let imgIdx = 0;
-    
-    // Replace pexels images
-    content = content.replace(/images\/pexels-[^"']*\.webp/g, (match) => {
-        const replacement = geminiImages[imgIdx % geminiImages.length];
+    // Replace all other CDN images including avif and svg
+    const pattern = /https:\/\/cdn\.prod\.website-files\.com\/[^\s"'<>)\?]+\.(jpg|jpeg|png|webp|avif|svg)/gi;
+
+    content = content.replace(pattern, (match) => {
+        if (match.toLowerCase().endsWith('.mp4') || match.toLowerCase().endsWith('.webm')) {
+            return match;
+        }
+        const replacement = stockImages[imgIdx % stockImages.length];
         imgIdx++;
         return replacement;
     });
-    
-    fs.writeFileSync(path.join(dir, f), content, 'utf8');
+
+    fs.writeFileSync(htmlPath, content, 'utf8');
+    console.log(`[${htmlPath}] Replaced ${imgIdx} remote images with local webp ones.`);
 });
-console.log('Images replaced!');
